@@ -1,5 +1,21 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
+## Latex
+
+### 字体颜色
+- 包：color
+- command: \textcolor{red}{text}
+- command: \colorbox{red}{text}
+
+### strike-out
+- 包：ulem
+- command：\soul{text}
+- ulem包会修改\empth{}的字体，
+  - \normalem
+  - \ULforem
+
+
+
 ## html
 
 - 链接外部CSS文件
@@ -8,6 +24,17 @@
 
 
 ## javascript
+### 事件处理的运行环境
+通过设置属性注册事件处理函数`e.onClick = function(){}`: _this指目标对象_
+`addEventListener("click", function(){}, true)`： _this指目标对象_
+`attachEvent("onclick", function(){})`： 作为函数调用，_this指全局对象windows_
+调用顺序：
+
+1. 设置属性/HTML属性
+2. addEventListener()
+3. attachEvent()
+
+事件冒泡和捕获的顺序相反
 
 ## CSS
 *选择器*[CSS Selector][]
@@ -35,6 +62,8 @@
 
 
 ## Emacs
+[Magit][]
+[常用](http://book.douban.com/review/6602480/)
 ### 大小写
 
 	从光标位置开始，处理单词后半部分
@@ -136,3 +165,4 @@ M-x <table-command>
 [split window]: http://ergoemacs.org/emacs/emacs_winner_mode.html
 [split window2]: https://www.cs.utah.edu/dept/old/texinfo/emacs18/emacs_21.html
 [CSS Selector]: http://www.w3school.com.cn/css/css_syntax_descendant_selector.asp
+[Magit]: https://github.com/magit/magit#installing-from-tarball
