@@ -159,6 +159,27 @@ M-x <table-command>
 	+-----------------------------------+----------+---------------+
 
 
+## Vim
+### Alt Macros in console version of vim
+```bash
+set convert-meta on
+```
+then, `set <m-i>=^[i`
+
+### table-mode
+
+
+| <Leader>tm table mode 开关
+| <Leader>tt 使用g:table_mode_delimiter定义的分隔符插入表格
+| <Leader>T 使用用户输入的分隔符插入表格
+| <Leader>tr 重新对齐
+| [| 移动到前一个表格
+| ]| 移动到下一个表格
+| {| 移动到上面一个表格
+| }| 移动到下面一个表格
+| || 插入表头边框
+| <Leader>tdd 删除一行
+| <Leader>tdc 删除一列
 
 
 [Text-Based Table]: https://www.gnu.org/software/emacs/manual/html_node/emacs/Text-Based-Tables.html
