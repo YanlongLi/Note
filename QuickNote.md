@@ -1,6 +1,10 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
 ## Latex
+### 带边框的文本
+- 包：framed
+- environment: framed
+- [WikiBooks-Boxes][]
 
 ### 字体颜色
 - 包：color
@@ -13,7 +17,6 @@
 - ulem包会修改\empth{}的字体，
   - \normalem
   - \ULforem
-
 
 
 ## html
@@ -182,8 +185,13 @@ then, `set <m-i>=^[i`
 | <Leader>tdc 删除一列
 
 
+## Other
+### do not bell on tab-completion in linux
+add `set bell-style none` to `/etc/inputrc`
+
 [Text-Based Table]: https://www.gnu.org/software/emacs/manual/html_node/emacs/Text-Based-Tables.html
 [split window]: http://ergoemacs.org/emacs/emacs_winner_mode.html
 [split window2]: https://www.cs.utah.edu/dept/old/texinfo/emacs18/emacs_21.html
 [CSS Selector]: http://www.w3school.com.cn/css/css_syntax_descendant_selector.asp
 [Magit]: https://github.com/magit/magit#installing-from-tarball
+[WikiBooks-Boxes]: http://en.wikibooks.org/wiki/LaTeX/Boxes
