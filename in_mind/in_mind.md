@@ -1,11 +1,30 @@
 
 
 
-__背景颜色、透明度、阴影、纹理__的使用
+### Hierarchical Data v.s. Categorical Data v.s. Multi-dimension Data
+层次数据和分类数据多维数据
+
+可视元素可以有重叠，但是要可以通过交互方式从混乱中提取信息，避免完全重叠的情况。
+
+### Quantum Treemap: rectagle内部可以放置内容
+
+### a consistent set of interaction techniques
+
+### __背景颜色、透明度、阴影、纹理__的使用
+
+### Context View and Focus View
+ACD Image Browser
+
+刚开始不需要为用户提供一个最优的方案，而是在一个简单的原型上，
+通过交互让用户探索自己需要的东西。
+
+给用户以选择，让用户选择去除什么，留下什么
 
 
 ## 异常处理中“Throws early, catch late”原则
+
 [exception-handling][]
+
 假设一个函数在接收错误的参数时出现bug，按照这个原则，
 当程序出现问题的时候你就能立刻知道问题是出在函数的调用上。
 如果直到用到整个参数的时候才进行处理，
