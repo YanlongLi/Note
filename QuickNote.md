@@ -184,6 +184,18 @@ then, `set <m-i>=^[i`
 | <Leader>tdd 删除一行
 | <Leader>tdc 删除一列
 
+## Bash
+
+### 提取文件名称和后缀
+[unix-linux-extract-filename-and-extension-in-bash][]
+```bash
+for filename in `ls *.*`
+do
+	$name=${filename%%.*};
+	$ext=${filename##*.};
+	echo $name+$ext;
+done
+```
 
 ## Other
 ### do not bell on tab-completion in linux
@@ -195,3 +207,4 @@ add `set bell-style none` to `/etc/inputrc`
 [CSS Selector]: http://www.w3school.com.cn/css/css_syntax_descendant_selector.asp
 [Magit]: https://github.com/magit/magit#installing-from-tarball
 [WikiBooks-Boxes]: http://en.wikibooks.org/wiki/LaTeX/Boxes
+[unix-linux-extract-filename-and-extension-in-bash]: http://www.cyberciti.biz/faq/unix-linux-extract-filename-and-extension-in-bash/
