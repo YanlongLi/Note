@@ -203,7 +203,7 @@ add `set bell-style none` to `/etc/inputrc`
 
 
 ## To-Read
-- [Markdown and reStructuredText][]
+- [Markdown and reStructuredText][], [GitHub Mark][]
 
 [Text-Based Table]: https://www.gnu.org/software/emacs/manual/html_node/emacs/Text-Based-Tables.html
 [split window]: http://ergoemacs.org/emacs/emacs_winner_mode.html
@@ -213,4 +213,5 @@ add `set bell-style none` to `/etc/inputrc`
 [WikiBooks-Boxes]: http://en.wikibooks.org/wiki/LaTeX/Boxes
 [unix-linux-extract-filename-and-extension-in-bash]: http://www.cyberciti.biz/faq/unix-linux-extract-filename-and-extension-in-bash/
 
+[GitHub Mark]: https://github.com/github/markup
 [Markdown and reStructuredText]: https://gist.github.com/dupuy/1855764
