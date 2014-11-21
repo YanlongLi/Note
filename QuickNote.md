@@ -201,6 +201,9 @@ done
 ### do not bell on tab-completion in linux
 add `set bell-style none` to `/etc/inputrc`
 
+### [MyPaint基础小教程][]
+
+
 
 ## To-Read
 - [Markdown and reStructuredText][], [GitHub Mark][]
@@ -215,3 +218,4 @@ add `set bell-style none` to `/etc/inputrc`
 
 [GitHub Mark]: https://github.com/github/markup
 [Markdown and reStructuredText]: https://gist.github.com/dupuy/1855764
+[MyPaint基础小教程]: https://forum.suse.org.cn/viewtopic.php?f=6&t=900
