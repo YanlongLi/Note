@@ -201,6 +201,10 @@ done
 ### do not bell on tab-completion in linux
 add `set bell-style none` to `/etc/inputrc`
 
+
+## To-Read
+- [Markdown and reStructuredText][]
+
 [Text-Based Table]: https://www.gnu.org/software/emacs/manual/html_node/emacs/Text-Based-Tables.html
 [split window]: http://ergoemacs.org/emacs/emacs_winner_mode.html
 [split window2]: https://www.cs.utah.edu/dept/old/texinfo/emacs18/emacs_21.html
@@ -208,3 +212,5 @@ add `set bell-style none` to `/etc/inputrc`
 [Magit]: https://github.com/magit/magit#installing-from-tarball
 [WikiBooks-Boxes]: http://en.wikibooks.org/wiki/LaTeX/Boxes
 [unix-linux-extract-filename-and-extension-in-bash]: http://www.cyberciti.biz/faq/unix-linux-extract-filename-and-extension-in-bash/
+
+[Markdown and reStructuredText]: https://gist.github.com/dupuy/1855764
