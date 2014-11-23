@@ -27,6 +27,10 @@
 
 
 ## javascript
+### 按照字母序比较字符串
+`string.localeCompare()`
+[tutorialspoint][js localeCompare]
+
 ### 事件处理的运行环境
 通过设置属性注册事件处理函数`e.onClick = function(){}`: _this指目标对象_
 `addEventListener("click", function(){}, true)`： _this指目标对象_
@@ -219,3 +223,4 @@ add `set bell-style none` to `/etc/inputrc`
 [GitHub Mark]: https://github.com/github/markup
 [Markdown and reStructuredText]: https://gist.github.com/dupuy/1855764
 [MyPaint基础小教程]: https://forum.suse.org.cn/viewtopic.php?f=6&t=900
+[js localeCompare]: http://www.tutorialspoint.com/javascript/string_localecompare.htm
