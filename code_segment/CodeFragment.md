@@ -2,12 +2,13 @@
 
 
 ## JavaScript
-
+### 方法链Methods Chain
+![JavaScript 方法链](_img/js_methods_chain_png)
 
 ### 理解this作用域和closure
 ![学习Javascript闭包（Closure）][js closure]
 可以通过对象的形式返回多个闭包:
-```
+```JavaScript
 var foo = ( function() {
 	var secret = 'secret';
 	// “闭包”内的函数可以访问 secret 变量，而 secret 变量对于外部却是隐藏的
@@ -27,7 +28,7 @@ var foo = ( function() {
 
 如下两段代码:
 代码1
-```
+```JavaScript
 var name = "The Window";
 
 var object = {
@@ -48,7 +49,7 @@ console.log(object.getNameFunc()());
 console.log(a.cc());
 ```
 代码2
-```
+```JavaScript
 var name = "The Window";
 　var object = {
 　　name : "My Object",
