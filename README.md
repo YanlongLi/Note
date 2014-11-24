@@ -2,10 +2,14 @@ Note
 ====
 
 
-```javascript
-var a = 10;
-for(int i = 0; i < a; i++){
-	document.getElementById("asdfa");
-	console.log(a);
-}
-```
+[Code Segment](code_segment/Code_Segment.md)
+======
+
+[In Mind](in_mind/in_mind.md)
+======
+
+[Quick Note](QuickNode.md)
+======
+
+[Memory](Memo.md)
+======
