@@ -4,6 +4,12 @@
 ## JavaScript
 ### JavaScript Object
 [From][Developers Should Know About JavaScript]
+This article presented three key pieces of knowledge:
+
+1. Every JavaScript object is a dictionary.
+2. Every JavaScript function is an object.
+3. Every JavaScript object references a prototype object. 
+
 > JavaScript objects are entirely different from C# and VB objects because they are ultimately a collection of name and value pairs, like a dictionary.
 
 > A JavaScript function is a chunk of executable code, but it's also a first class object. This is fundamentally different from methods in C# and Visual Basic. We can invoke methods in C# and VB, but we can't treat those methods as datatypes (although delegates and lamda expressions in C# make this area a little bit fuzzy). In JavaScript, we can manipulate functions using other JavaScript code, assign functions to variables, store functions inside arrays, nest functions inside other functions, and pass functions as a parameter to other functions.
@@ -25,8 +31,11 @@
 > You can almost think of every object as inheriting from it's prototype, because it will include all the properties and methods defined by its prototype.
 and the object of the function can be a static object to these objects
 
+> A closure in JavaScript is an inner function that references a local var or parameter in its outer function. Those local variables and parameters, which typically go out of scope when the outer function finishes execution are now "enclosed" by the inner function, which can continue to reference and use those variables. 
+
 **private members can be implemented by closure**
 ```JavaScript
+// parameters are in closure
 function Point(x, y) {	
 	this.get_x = function() { return x; }
 	this.set_x = function(value) { x = value; }
@@ -35,6 +44,7 @@ function Point(x, y) {
 }
 ```
 
+**namespace can be simulated using objects**
 
 ### [JavaScript Closure][js closure]
 **What is a closure>**
