@@ -2,6 +2,40 @@
 
 
 ## JavaScript
+### JavaScript Object
+[From][Developers Should Know About JavaScript]
+> JavaScript objects are entirely different from C# and VB objects because they are ultimately a collection of name and value pairs, like a dictionary.
+
+> A JavaScript function is a chunk of executable code, but it's also a first class object. This is fundamentally different from methods in C# and Visual Basic. We can invoke methods in C# and VB, but we can't treat those methods as datatypes (although delegates and lamda expressions in C# make this area a little bit fuzzy). In JavaScript, we can manipulate functions using other JavaScript code, assign functions to variables, store functions inside arrays, nest functions inside other functions, and pass functions as a parameter to other functions.
+
+> Technically, what we've done with the add function is create a new function object, and assigned the function object to a variable named add. We could take the same function object and assign it to different variables and invoke the function through those variables. 
+
+> Every JavaScript object references a prototype object. 
+
+- class-based programming language: To create objects, we must first write a class that defines fields, properties, methods, and events. When we create a new object, we are creating an instance of that class. 
+- prototype-based programming language: Every object has a prototype property that references its prototype object. Any properties and methods that are a part of an object's prototype will appear as properties and methods of the object itself.
+
+**What happens when we use new operator?**
+1. Create an empty object.
+2. Assign the value of the constructor function's prototype property to the new object's prototype property.
+3. Invoke the constructor function, passing the new object as the "this" reference. 
+
+![](_img/js_prototype_.png)
+
+> You can almost think of every object as inheriting from it's prototype, because it will include all the properties and methods defined by its prototype.
+and the object of the function can be a static object to these objects
+
+**private members can be implemented by closure**
+```JavaScript
+function Point(x, y) {	
+	this.get_x = function() { return x; }
+	this.set_x = function(value) { x = value; }
+	this.get_y = function() { return y; }
+	this.set_y = function(value) { y = value; }
+}
+```
+
+
 ### [JavaScript Closure][js closure]
 **What is a closure>**
 > A closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain. The closure has three scope chains: it has access to its own scope (variables defined between its curly brackets), it has access to the outer function’s variables, and it has access to the global variables. 
@@ -44,7 +78,7 @@ g(o, f, "The value of x squared = ", ". Wow!");
 - Bind Allows Us to Set the this Value on Methods 
 - Bind Allows us to Borrow Methods
 - Bind Allows Us to Curry a Function 
-```JavaSciprt
+```JavaScript
 function greet (gender, age, name) {
 	// if a male, use Mr., else use Ms.
 	var salutation = gender === "male" ? "Mr. " : "Ms. ";
@@ -105,7 +139,7 @@ showUserData();
 ```
 
 - **Fix this when borrowing methods**
-```
+```JavaScript
 // We have two objects. One of them has a method called avg () that the other doesn't have
 // So we will borrow the (avg()) method
 var gameController = {
@@ -138,7 +172,7 @@ appController.avg.apply (gameController, gameController.scores);
 ![JavaScript 方法链](_img/js_methods_chain_png)
 
 ### 理解this作用域和closure
-![学习Javascript闭包（Closure）][js closure]
+![学习JavaScript闭包（Closure）][js closure]
 可以通过对象的形式返回多个闭包:
 ```JavaScript
 var foo = ( function() {
@@ -212,3 +246,4 @@ function d3_layout_hierarchyLinks(nodes) {
 [js understand this]: http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/
 [js apply call bind]: http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/
 [js closure]: http://javascriptissexy.com/understand-javascript-closures-with-ease/
+[Developers Should Know About JavaScript]: http://odetocode.com/Articles/473.aspx
