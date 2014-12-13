@@ -18,6 +18,12 @@
   - \normalem
   - \ULforem
 
+### cite style
+[someone et al. year][latex natbib]
+[Bibliography and citation style][latex citation style]
+
+### [PDF file Presentation]
+
 
 ## html
 
@@ -167,7 +173,19 @@ M-x <table-command>
 
 
 ## Vim
+### ctags
+
+#### generate tags file of current directory
+```bash
+ctags -R .
+ctags -R -f . ./directory/to/store/tags
+```
+### taglist
+```vimscript
+:TlistToggle
+```
 ### Alt Macros in console version of vim
+
 ```bash
 set convert-meta on
 ```
@@ -188,11 +206,26 @@ then, `set <m-i>=^[i`
 | <Leader>tdd 删除一行
 | <Leader>tdc 删除一列
 
+### [Resize splits window more quickly][vim resize window]
+```vimscript
+:resize/res 60
+:resize +5
+:resize -5
+
+:vertical resize 80
+:vertical resize +5
+:vertical resize -5
+```
 ## Bash
 
+### AWK
+- 打印文件的奇数行`awk 'NR%2'`
+
 ### 提取文件名称和后缀
+
 [unix-linux-extract-filename-and-extension-in-bash][]
-```bash
+
+```
 for filename in `ls *.*`
 do
 	$name=${filename%%.*};
@@ -201,13 +234,69 @@ do
 done
 ```
 
+## Git
+几个概念:
+
+- 仓库
+- 提交
+- 分支
+- 日志
+
+```git
+$ git remote add origin some-url #设置仓库
+$ git commit --amend -m "commit message." #修补提交（修补最近一次的提交而不创建新的提交）
+$ git push -u origin master #将代码从本地传回到仓库
+$ git branch checkout master # 切换到主分支
+
+$ git log # 查看提交信息
+$ git log --pretty=oneline # 以整洁的单行形式显示提交信息
+$ git log --stat # 查看提交信息及更新的文件
+
+$ git archive --format tar --output /path/to/file.tar master # 将 master 以 tar 格式打包到指定文件
+```
+使用 Git 的一些基本守则：
+当要commit/提交patch时：
+
+- 使用 git diff --check 检查行尾有没有多余的空白
+- 每个 commit 只改一件事情。如果一个文档有多个变更，使用 git add --patch 只选择文档中的部分变更进入 stage
+- 写清楚 commit message
+
+### the branching strategy and release management.
+两个branch of infinite lifetime:
+
+- origin/master: code of `HEAD` always reflect the `product-ready` state
+- origin/develop: code of `HEAD` always relect the latest changes for next release
+
+principle of `master` and `develop`:
+> When the source code in the develop branch reaches a stable point and is ready to be released, all of the changes should be merged back into master somehow and then tagged with a release number. 
+
+Under this condition, a `git hook script` can be used to generate software of new version.
+
+article [][] gives three type of support branches
+
+- feature branch
+	- branch off from `develop` and merged back into `develop` eventually
+
+			$ git checkout -b myfeature develop #Switched to a new branch "myfeature"
+			(do something)
+			$ git checkout develop #Switched to branch 'develop'
+			$ git merge --no-ff myfeature #Updating
+			(Summary of changes)
+			$ git branch -d myfeature #Deleted branch myfeature
+			$ git push origin develop 
+
+- release branch
+- hotfix branch
+
 ## Other
 ### do not bell on tab-completion in linux
 add `set bell-style none` to `/etc/inputrc`
 
 ### [MyPaint基础小教程][]
 
+### [Mathjax 符号对照表][mathjax symbols]
 
+### [farbox协作规则][farbox editor]
 
 ## To-Read
 - [Markdown and reStructuredText][], [GitHub Mark][]
@@ -224,3 +313,9 @@ add `set bell-style none` to `/etc/inputrc`
 [Markdown and reStructuredText]: https://gist.github.com/dupuy/1855764
 [MyPaint基础小教程]: https://forum.suse.org.cn/viewtopic.php?f=6&t=900
 [js localeCompare]: http://www.tutorialspoint.com/javascript/string_localecompare.htm
+[vim resize window]: http://vim.wikia.com/wiki/Resize_splits_more_quickly
+[latex natbib]: http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#Natbib
+[latex citation style]: http://sites.stat.psu.edu/~surajit/present/bib.htm
+[PDF file Presentation]: http://sites.stat.psu.edu/~surajit/present/pdf.html
+[mathjax symbols]: http://www.lyyz.net/blog/user1/zyair/archives/2012/570.html
+[farbox editor]: http://help.farbox.com/read/basic-writting
