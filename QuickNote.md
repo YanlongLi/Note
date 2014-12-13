@@ -28,6 +28,12 @@
 
 ### [PDF file Presentation]
 
+[someone et al. year][latex natbib]
+
+[Bibliography and citation style][latex citation style]
+
+### [PDF file Presentation]
+
 ## html
 
 - 链接外部CSS文件
@@ -189,6 +195,7 @@ adjust size
 
 ## Vim
 ### ctags
+
 #### generate tags file of current directory
 ```bash
 ctags -R .
@@ -200,12 +207,25 @@ ctags -R -f . ./directory/to/store/tags
 ```
 
 ### Alt Macros in console version of vim
+
 ```bash
 set convert-meta on
 ```
 then, `set <m-i>=^[i`
 
 ### table-mode
+
+	| <Leader>tm table mode 开关
+	| <Leader>tt 使用g:table_mode_delimiter定义的分隔符插入表格
+	| <Leader>T 使用用户输入的分隔符插入表格
+	| <Leader>tr 重新对齐
+	| [| 移动到前一个表格
+	| ]| 移动到下一个表格
+	| {| 移动到上面一个表格
+	| }| 移动到下面一个表格
+	| || 插入表头边框
+	| <Leader>tdd 删除一行
+	| <Leader>tdc 删除一列
 
 	| <Leader>tm table mode 开关
 	| <Leader>tt 使用g:table_mode_delimiter定义的分隔符插入表格
@@ -325,6 +345,60 @@ article [git branch model][] gives three type of support branches
 	![hot fix branch](_img/hotfix-branches.png)
 
 
+## Git
+几个概念:
+
+- 仓库
+- 提交
+- 分支
+- 日志
+
+```git
+$ git remote add origin some-url #设置仓库
+$ git commit --amend -m "commit message." #修补提交（修补最近一次的提交而不创建新的提交）
+$ git push -u origin master #将代码从本地传回到仓库
+$ git branch checkout master # 切换到主分支
+
+$ git log # 查看提交信息
+$ git log --pretty=oneline # 以整洁的单行形式显示提交信息
+$ git log --stat # 查看提交信息及更新的文件
+
+$ git archive --format tar --output /path/to/file.tar master # 将 master 以 tar 格式打包到指定文件
+```
+使用 Git 的一些基本守则：
+当要commit/提交patch时：
+
+- 使用 git diff --check 检查行尾有没有多余的空白
+- 每个 commit 只改一件事情。如果一个文档有多个变更，使用 git add --patch 只选择文档中的部分变更进入 stage
+- 写清楚 commit message
+
+### the branching strategy and release management.
+两个branch of infinite lifetime:
+
+- origin/master: code of `HEAD` always reflect the `product-ready` state
+- origin/develop: code of `HEAD` always relect the latest changes for next release
+
+principle of `master` and `develop`:
+> When the source code in the develop branch reaches a stable point and is ready to be released, all of the changes should be merged back into master somehow and then tagged with a release number. 
+
+Under this condition, a `git hook script` can be used to generate software of new version.
+
+article [][] gives three type of support branches
+
+- feature branch
+	- branch off from `develop` and merged back into `develop` eventually
+
+			$ git checkout -b myfeature develop #Switched to a new branch "myfeature"
+			(do something)
+			$ git checkout develop #Switched to branch 'develop'
+			$ git merge --no-ff myfeature #Updating
+			(Summary of changes)
+			$ git branch -d myfeature #Deleted branch myfeature
+			$ git push origin develop 
+
+- release branch
+- hotfix branch
+
 ## Other
 ### do not bell on tab-completion in linux
 add `set bell-style none` to `/etc/inputrc`
@@ -336,7 +410,8 @@ add `set bell-style none` to `/etc/inputrc`
 ### [farbox协作规则][farbox editor]
 
 ## To-Read
-- [Markdown and reStructuredText][], [GitHub Mark][]
+- [Markdown and reStructuredText][]
+- [GitHub Mark][]
 
 [Text-Based Table]: https://www.gnu.org/software/emacs/manual/html_node/emacs/Text-Based-Tables.html
 [split window]: http://ergoemacs.org/emacs/emacs_winner_mode.html
