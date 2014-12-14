@@ -36,13 +36,15 @@
 
 ## html
 
+- 设置`charset`
+`<meta http-equiv="content-type" content="text/html; charset=UTF-8">`
 - 链接外部CSS文件
 `<link rel="stylesheet" type="text/css" href="mystyle.css">`
 
 ## javascript
-### 按照字母序比较字符串
 
-`string.localeCompare()`
+### 按照字母序比较字符串 
+使用`string.localeCompare()`
 
 [tutorialspoint][js localeCompare]
 
@@ -61,7 +63,56 @@
 事件冒泡和捕获的顺序相反
 
 ## CSS
-*选择器*[CSS Selector][]
+
+### CSS设计技巧
+
+[from][css design pattern]
+
+> seperate `width` `padding/border` `margin`
+
+- use a additional label to separate `width` and `padding/border`
+
+```CSS
+.box{width:300px; height:80px;}
+.box .roundBox{padding:10px;}
+.box .roundBox-modifed{padding:10px 15px; border:1px solid #ccc;}
+```
+
+- separate `margin`
+
+```CSS
+.m10{margin:10px}
+.m15{margin:15px}
+.m30{margin:30px}
+.mt5{margin-top:5px}
+.mt10{margin-top:10px}
+.mt15{margin-top:15px}
+.mt20{margin-top:20px}
+.mt30{margin-top:30px}
+.mt50{margin-top:50px}
+.mt100{margin-top:100px}
+.mb10{margin-bottom:10px}
+.mb15{margin-bottom:15px}
+.mb20{margin-bottom:20px}
+.mb30{margin-bottom:30px}
+.mb50{margin-bottom:50px}
+.mb100{margin-bottom:100px}
+.ml5{margin-left:5px}
+.ml10{margin-left:10px}
+.ml15{margin-left:15px}
+.ml20{margin-left:20px}
+.ml30{margin-left:30px}
+.ml50{margin-left:50px}
+.ml100{margin-left:100px}
+.mr5{margin-right:5px}
+.mr10{margin-right:10px}
+.mr15{margin-right:15px}
+.mr20{margin-right:20px}
+.mr30{margin-right:30px}
+.mr50{margin-right:50px}
+.mr100{margin-right:100px}
+```
+### 选择器[CSS Selector][]
 
 - 组选择器
 
@@ -81,119 +132,10 @@
 
         h1 + p {}
 
-## Markdown
-`<meta http-equiv="content-type" content="text/html; charset=UTF-8">`
-
-## Emacs
-[Magit][]
-
-[常用](http://book.douban.com/review/6602480/)
-
-### 大小写
-
-	从光标位置开始，处理单词后半部分
-
-	capitalize-word (M-c) ;; 单词首字母转为大写
-	upcase-word (M-u)     ;; 整个单词转为大写
-	downcase-word (M-l)   ;; 整个单词转为小写
-
-	从光标位置开始，处理单词前半部分
-
-	negtive-argument; capitalize-word (M-- M-c) ;; 单词首字母转为大写
-	negtive-argument; upcase-word (M-- M-u)     ;; 整个单词转为大写
-	negtive-argument; downcase-word (M-- M-l)   ;; 整个单词转为小写
-
-	改变选定区域的大小写
-
-	downcase-region (C-x C-l) ;; 选定区域全部改为小写
-	upcase-region (C-x C-u)   ;; 选定区域全部改为大写
-
-### 输入tab键
-C-q <tab> 或者M-i
-
-### 列编辑
-[列编辑模式](http://blog.sina.com.cn/s/blog_61107c450100kjqg.html)
-
-选择区域，注意起始光标位置和终止光标位置不在同一列后续可选操作
-
-- 在这块区域插入空白的方格， 用C-x r o
-- 删除这块区域用 C-x r d （这种删除掉之后不留空白）
-- 删除区域 C-x r C (删掉之后原位置保留为空)
-- 复制并删除这块区域用 C-x r k
-- 粘贴刚才C-x r k复制的区域用C-x r y
-- 用字符替换选中区域用C-x r t
-
-复杂操作：
-
-- C-x r r  copy-rectangle-to-register 将选定的矩形区域复制到某个寄存器  
-
-> 选中去区域后  C-x r r 将选中区域复制到寄存器， 在输入这组键后命令栏会等待你输入寄存器号，这时随便输入一个数字即可，不过的记得它，因为待会儿粘贴的时候还得用到这个寄存器号。
-
-- C-x r i 插入寄存器的内容  
-
-> 输入此键后再输入寄存器号可将寄存器中的内容插入到当前区域。
-
-### Text-Based Tables
-[Text-Based Table][]
-
-M-x <table-command>
-
-### 拆分窗口
-
-- [split window][]
-- [split window2][]
-
-```
-	+----------+--------------------+----------+
-	|Purpose   |Command             |Key       |
-	|          |Name                |          |
-	+----------+--------------------+----------+
-	|spliet    |split-window-below  |Ctrl+x 2  |
-	|top/bottom|                    |          |
-	+----------+--------------------+----------+
-	|split     |split-window-right  |Ctrl+x 3  |
-	|left/right|                    |          |
-	+----------+--------------------+----------+
-	|unsplit   |delete-other-windows|Ctrl+x 1  |
-	|all       |                    |          |
-	+----------+--------------------+----------+
-	|remove    |delete-window       |Ctrl+x 0  |
-	|current   |                    |          |
-	|pane      |                    |          |
-	+----------+--------------------+----------+
-	|cycle     |pane other-window   |Ctrl+x o  |
-	|cursor to |                    |          |
-	|next      |                    |          |
-	+----------+--------------------+----------+
-```
-	
-adjust size
-	
-	+-----------------------------------+----------+---------------+
-	|enlarge-window                     |Ctrl+x ^  |increase       |
-	|                                   |          |height         |
-	+-----------------------------------+----------+---------------+
-	|shrink-window                      |none      |decrease       |
-	|                                   |          |height         |
-	+-----------------------------------+----------+---------------+
-	|enlarge-window-horizontally        |Ctrl+x }  |increase       |
-	|                                   |          |width          |
-	+-----------------------------------+----------+---------------+
-	|shrink-window-horizontally         |Ctrl+x {  |decrease       |
-	|                                   |          |width          |
-	+-----------------------------------+----------+---------------+
-	|shrink-window-if-larger-than-buffer|Ctrl+x -  |shrink a       |
-	|                                   |          |window to      |
-	|                                   |          |fit its        |
-	|                                   |          |content.       |
-	+-----------------------------------+----------+---------------+
-	|balance-windows                    |Ctrl+x +  |make all       |
-	|                                   |          |windows same   |
-	|                                   |          |width/height   |
-	+-----------------------------------+----------+---------------+
 
 
 ## Vim
+
 ### ctags
 
 #### generate tags file of current directory
@@ -201,13 +143,12 @@ adjust size
 ctags -R .
 ctags -R -f . ./directory/to/store/tags
 ```
+
 ### taglist
 ```vimscript
 :TlistToggle
 ```
-
 ### Alt Macros in console version of vim
-
 ```bash
 set convert-meta on
 ```
@@ -239,6 +180,7 @@ then, `set <m-i>=^[i`
 	| <Leader>tdd 删除一行
 	| <Leader>tdc 删除一列
 
+
 ### [Resize splits window more quickly][vim resize window]
 ```vimscript
 :resize/res 60
@@ -249,6 +191,7 @@ then, `set <m-i>=^[i`
 :vertical resize +5
 :vertical resize -5
 ```
+
 ## Bash
 
 ### AWK
@@ -269,6 +212,7 @@ done
 ## Git
 [git 操作详解][git remote]
 
+![git flow](_img/git-flow.jpg)
 
 几个概念:
 
@@ -312,92 +256,44 @@ article [git branch model][] gives three type of support branches
 - feature branch
 	- branch off from `develop` and merged back into `develop` eventually
 
-			$ git checkout -b myfeature develop #Switched to a new branch "myfeature"
-			(do something)
-			$ git checkout develop #Switched to branch 'develop'
-			$ git merge --no-ff myfeature #Updating
-			(Summary of changes)
-			$ git branch -d myfeature #Deleted branch myfeature
-			$ git push origin develop 
+```bash
+$ git checkout -b myfeature develop #Switched to a new branch "myfeature"
+(do something)
+$ git checkout develop #Switched to branch 'develop'
+$ git merge --no-ff myfeature #Updating
+(Summary of changes)
+$ git branch -d myfeature #Deleted branch myfeature
+$ git push origin develop 
+```
 
 - release branch
 	- branch off from `develop` and merged back into `develop` and `master` eventually
 	- when `develop` branch is in a desired state for next release and the version number is decided.
 	
-			$ git checkout -b release-1.2 develop #Switched to a new branch "release-1.2"
-			(modify files to the new version number)
-			$ git commit -a -m "Bumped version number to 1.2"
-			(apply bug fixes)
-			(...)
-			$ git checkout master #Switched to branch 'master'
-			$ git merge --no-ff release-1.2 #Merge made by recursive.
-			(Summary of changes)
-			$ git tag -a 1.2
-
-			$ git checkout develop #Switched to branch 'develop'
-			$ git merge --no-ff release-1.2
-
-			$ git branch -d release-1.2
+```bash
+$ git checkout -b release-1.2 develop #Switched to a new branch "release-1.2"
+(modify files to the new version number)
+$ git commit -a -m "Bumped version number to 1.2"
+(apply bug fixes)
+(...)
+$ git checkout master #Switched to branch 'master'
+$ git merge --no-ff release-1.2 #Merge made by recursive.
+(Summary of changes)
+$ git tag -a 1.2
+```
+```bash
+$ git checkout develop #Switched to branch 'develop'
+$ git merge --no-ff release-1.2
+```
+```bash
+$ git branch -d release-1.2
+```
 			
 - hotfix branch
 	- branch off from `develop` and merged back into `develop` and `master` eventually
 
 	![hot fix branch](_img/hotfix-branches.png)
 
-
-## Git
-几个概念:
-
-- 仓库
-- 提交
-- 分支
-- 日志
-
-```git
-$ git remote add origin some-url #设置仓库
-$ git commit --amend -m "commit message." #修补提交（修补最近一次的提交而不创建新的提交）
-$ git push -u origin master #将代码从本地传回到仓库
-$ git branch checkout master # 切换到主分支
-
-$ git log # 查看提交信息
-$ git log --pretty=oneline # 以整洁的单行形式显示提交信息
-$ git log --stat # 查看提交信息及更新的文件
-
-$ git archive --format tar --output /path/to/file.tar master # 将 master 以 tar 格式打包到指定文件
-```
-使用 Git 的一些基本守则：
-当要commit/提交patch时：
-
-- 使用 git diff --check 检查行尾有没有多余的空白
-- 每个 commit 只改一件事情。如果一个文档有多个变更，使用 git add --patch 只选择文档中的部分变更进入 stage
-- 写清楚 commit message
-
-### the branching strategy and release management.
-两个branch of infinite lifetime:
-
-- origin/master: code of `HEAD` always reflect the `product-ready` state
-- origin/develop: code of `HEAD` always relect the latest changes for next release
-
-principle of `master` and `develop`:
-> When the source code in the develop branch reaches a stable point and is ready to be released, all of the changes should be merged back into master somehow and then tagged with a release number. 
-
-Under this condition, a `git hook script` can be used to generate software of new version.
-
-article [][] gives three type of support branches
-
-- feature branch
-	- branch off from `develop` and merged back into `develop` eventually
-
-			$ git checkout -b myfeature develop #Switched to a new branch "myfeature"
-			(do something)
-			$ git checkout develop #Switched to branch 'develop'
-			$ git merge --no-ff myfeature #Updating
-			(Summary of changes)
-			$ git branch -d myfeature #Deleted branch myfeature
-			$ git push origin develop 
-
-- release branch
-- hotfix branch
 
 ## Other
 ### do not bell on tab-completion in linux
@@ -413,11 +309,8 @@ add `set bell-style none` to `/etc/inputrc`
 - [Markdown and reStructuredText][]
 - [GitHub Mark][]
 
-[Text-Based Table]: https://www.gnu.org/software/emacs/manual/html_node/emacs/Text-Based-Tables.html
-[split window]: http://ergoemacs.org/emacs/emacs_winner_mode.html
-[split window2]: https://www.cs.utah.edu/dept/old/texinfo/emacs18/emacs_21.html
 [CSS Selector]: http://www.w3school.com.cn/css/css_syntax_descendant_selector.asp
-[Magit]: https://github.com/magit/magit#installing-from-tarball
+[css design pattern]: http://www.hicss.net/separation-of-powers-model-in-css-design-patterns/
 [WikiBooks-Boxes]: http://en.wikibooks.org/wiki/LaTeX/Boxes
 [unix-linux-extract-filename-and-extension-in-bash]: http://www.cyberciti.biz/faq/unix-linux-extract-filename-and-extension-in-bash/
 
@@ -434,3 +327,4 @@ add `set bell-style none` to `/etc/inputrc`
 
 [git branch model]: http://nvie.com/posts/a-successful-git-branching-model/
 [git remote]: http://www.ruanyifeng.com/blog/2014/06/git_remote.html
+
