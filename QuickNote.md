@@ -305,9 +305,14 @@ add `set bell-style none` to `/etc/inputrc`
 
 ### [farbox协作规则][farbox editor]
 
+## Split cue file to flac
+[cue spliting][]
+`shnsplit`
+
 ## To-Read
 - [Markdown and reStructuredText][]
 - [GitHub Mark][]
+- [Draw Presentable Trees][pymag-trees]: algorithms to draw trees
 
 [CSS Selector]: http://www.w3school.com.cn/css/css_syntax_descendant_selector.asp
 [css design pattern]: http://www.hicss.net/separation-of-powers-model-in-css-design-patterns/
@@ -328,3 +333,6 @@ add `set bell-style none` to `/etc/inputrc`
 [git branch model]: http://nvie.com/posts/a-successful-git-branching-model/
 [git remote]: http://www.ruanyifeng.com/blog/2014/06/git_remote.html
 
+[cue spliting]: https://wiki.archlinux.org/index.php/APE+CUE_Splitting
+
+[pymag-trees]: http://billmill.org/pymag-trees/

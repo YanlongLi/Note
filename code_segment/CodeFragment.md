@@ -1,9 +1,19 @@
 
 
+## Bash Commands
+
+- find top ten large files or directories 
+
+	```bash
+	du -s * | sort -nr | head | cut -f2 | parallel -k du -sh 
+	```
 
 ## JavaScript
+
 ### JavaScript Object
+
 [From][Developers Should Know About JavaScript]
+
 This article presented three key pieces of knowledge:
 
 1. Every JavaScript object is a dictionary.
@@ -22,6 +32,7 @@ This article presented three key pieces of knowledge:
 - prototype-based programming language: Every object has a prototype property that references its prototype object. Any properties and methods that are a part of an object's prototype will appear as properties and methods of the object itself.
 
 **What happens when we use new operator?**
+
 1. Create an empty object.
 2. Assign the value of the constructor function's prototype property to the new object's prototype property.
 3. Invoke the constructor function, passing the new object as the "this" reference. 
@@ -34,6 +45,7 @@ and the object of the function can be a static object to these objects
 > A closure in JavaScript is an inner function that references a local var or parameter in its outer function. Those local variables and parameters, which typically go out of scope when the outer function finishes execution are now "enclosed" by the inner function, which can continue to reference and use those variables. 
 
 **private members can be implemented by closure**
+
 ```JavaScript
 // parameters are in closure
 function Point(x, y) {	
@@ -47,7 +59,8 @@ function Point(x, y) {
 **namespace can be simulated using objects**
 
 ### [JavaScript Closure][js closure]
-**What is a closure>**
+
+**What is a closure**
 > A closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain. The closure has three scope chains: it has access to its own scope (variables defined between its curly brackets), it has access to the outer function’s variables, and it has access to the global variables. 
 
 
@@ -66,6 +79,7 @@ alert(foo.toString());
 函数定义中所有用this访问的methods和variables都会被object中的对应methods和variable替代.
 
 **使用apply()函数创建delegate**
+
 ```JavaScript
 var o = { x: 15 };
 function f(message1, message2){
@@ -84,10 +98,13 @@ function g(object, func){
 g(o, f, "The value of x squared = ", ". Wow!");
 ```
 ### bind() function
+
 [From][js apply call bind]
+
 - Bind Allows Us to Set the this Value on Methods 
 - Bind Allows us to Borrow Methods
 - Bind Allows Us to Curry a Function 
+
 ```JavaScript
 function greet (gender, age, name) {
 	// if a male, use Mr., else use Ms.
@@ -108,82 +125,95 @@ greetAYoungster ("Emma Waterloo"); // "Hey, Emma Waterloo."
 ```
 
 ### Scenarios when the this keyword becomes tricky
+
 [From][js understand this]
+
 - **Fix this when used in a method passed as a callback**
-```JavaScript
-// We have a simple object with a clickHandler method that we want to use
-//when a button on the page is clicked
-var user = {
-	data:[ {name:"T. Woods", age:37}, {name:"P. Mickelson", age:43} ],
-	clickHandler:function (event) {
-	var randomNum = ((Math.random () * 2 | 0) + 1) - 1; // random number between 0 and 1
-		// This line is printing a random person's name and age from the data array
-		console.log (this.data[randomNum].name + " " + this.data[randomNum].age);
+
+	```JavaScript
+	// We have a simple object with a clickHandler method that we want to use
+	//when a button on the page is clicked
+	var user = {
+		data:[ {name:"T. Woods", age:37}, {name:"P. Mickelson", age:43} ],
+		clickHandler:function (event) {
+		var randomNum = ((Math.random () * 2 | 0) + 1) - 1; // random number between 0 and 1
+			// This line is printing a random person's name and age from the data array
+			console.log (this.data[randomNum].name + " " + this.data[randomNum].age);
+		}
 	}
-}
-// The button is wrapped inside a jQuery $ wrapper, so it is now a jQuery object
-// And the output will be undefined because there is no data property on the button object
-$ ("button").click (user.clickHandler); // Cannot read property '0' of undefined
+	// The button is wrapped inside a jQuery $ wrapper, so it is now a jQuery object
+	// And the output will be undefined because there is no data property on the button object
+	$ ("button").click (user.clickHandler); // Cannot read property '0' of undefined
 
-```
-_solution_: use `bind` method
-```
-$("button").click (user.clickHandler.bind (user)); // P. Mickelson 43
-```
+	```
+
+	_solution_: use `bind` method
+
+	```JavaScript
+	$("button").click (user.clickHandler.bind (user)); // P. Mickelson 43
+	```
 - **Fix this inside closure**
-> It is important to take note that closures cannot access the outer function’s this variable by using the this keyword because the this variable is accessible only by the function itself, not by inner functions.
 
-_solution_: set the this value to another variable before we enter the forEach method.
+	> It is important to take note that closures cannot access the outer function’s this variable by using the this keyword because the this variable is accessible only by the function itself, not by inner functions.
+
+	_solution_: set the this value to another variable before we enter the forEach method.
 
 - **Fix this when method is assigned to a variable**
-> The this value escapes our imagination and is bound to another object, if we assign a method that uses this to a variable.
 
-_solution_:specifically setting the this value with the bind method
-```JavaScript
-var showUserData = user.showData;
-showUserData();
-```
-```JavaScript
-var showUserData = user.showData.bind(user);
-showUserData();
-```
+	> The this value escapes our imagination and is bound to another object, if we assign a method that uses this to a variable.
+
+	_solution_:specifically setting the this value with the bind method
+
+	```JavaScript
+	var showUserData = user.showData;
+	showUserData();
+	```
+	```JavaScript
+	var showUserData = user.showData.bind(user);
+	showUserData();
+	```
 
 - **Fix this when borrowing methods**
-```JavaScript
-// We have two objects. One of them has a method called avg () that the other doesn't have
-// So we will borrow the (avg()) method
-var gameController = {
-	scores :[20, 34, 55, 46, 77],
-	avgScore:null,
-	players :[ {name:"Tommy", playerID:987, age:23}, {name:"Pau", playerID:87, age:33} ]
-}
-var appController = {
-	scores :[900, 845, 809, 950],
-	avgScore:null,
-	avg :function () {
-		var sumOfScores = this.scores.reduce (function (prev, cur, index, array) {
-			return prev + cur;
-		});
-		this.avgScore = sumOfScores / this.scores.length;
-	}
-}
-//If we run the code below,
-//the gameController.avgScore property will be set to the average score from the
-//appController object "scores" array
-gameController.avgScore = appController.avg();
-```
-_solution:_use `apply()` method
-```JavaScript
-appController.avg.apply (gameController, gameController.scores);
-```
 
+	```JavaScript
+	// We have two objects. One of them has a method called avg () that the other doesn't have
+	// So we will borrow the (avg()) method
+	var gameController = {
+		scores :[20, 34, 55, 46, 77],
+		avgScore:null,
+		players :[ {name:"Tommy", playerID:987, age:23}, {name:"Pau", playerID:87, age:33} ]
+	}
+	var appController = {
+		scores :[900, 845, 809, 950],
+		avgScore:null,
+		avg :function () {
+			var sumOfScores = this.scores.reduce (function (prev, cur, index, array) {
+				return prev + cur;
+			});
+			this.avgScore = sumOfScores / this.scores.length;
+		}
+	}
+	//If we run the code below,
+	//the gameController.avgScore property will be set to the average score from the
+	//appController object "scores" array
+	gameController.avgScore = appController.avg();
+	```
+
+	_solution:_use `apply()` method
+
+	```JavaScript
+	appController.avg.apply (gameController, gameController.scores);
+	```
 
 ### 方法链Methods Chain
 ![JavaScript 方法链](_img/js_methods_chain_png)
 
 ### 理解this作用域和closure
-![学习JavaScript闭包（Closure）][js closure]
+
+[学习JavaScript闭包（Closure）][js closure]
+
 可以通过对象的形式返回多个闭包:
+
 ```JavaScript
 var foo = ( function() {
 	var secret = 'secret';
@@ -203,7 +233,9 @@ var foo = ( function() {
 ![this 作用域](_img/js_this_.png)
 
 如下两段代码:
+
 代码1
+
 ```JavaScript
 var name = "The Window";
 
@@ -224,7 +256,9 @@ var a = {
 console.log(object.getNameFunc()());
 console.log(a.cc());
 ```
+
 代码2
+
 ```JavaScript
 var name = "The Window";
 　var object = {
@@ -241,6 +275,7 @@ console.log(object.getNameFunc()());
 ```
 
 ### 把一个`{children:[,,,]}`数组转换成一个`{source:,target}`数组
+
 ```JavaScript
 function d3_layout_hierarchyLinks(nodes) {
 	return d3.merge(nodes.map(function(parent) {

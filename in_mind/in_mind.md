@@ -1,18 +1,27 @@
 
 
-
-### Hierarchical Data v.s. Categorical Data v.s. Multi-dimension Data
+## Hierarchical Data v.s. Categorical Data v.s. Multi-dimension Data
 层次数据和分类数据多维数据
 
 可视元素可以有重叠，但是要可以通过交互方式从混乱中提取信息，避免完全重叠的情况。
 
-### Quantum Treemap: rectagle内部可以放置内容
+## Quantum Treemap: rectagle内部可以放置内容
 
-### a consistent set of interaction techniques
+## a consistent set of interaction techniques
 
-### __背景颜色、透明度、阴影、纹理__的使用
+## __背景颜色、透明度、阴影、纹理__的使用
 
-### Context View and Focus View
+## Suggestion Based Technique
+
+- [TreePlus: Interactive Exploration of Networks with Enhanced Tree Layouts][TreePlus]
+		
+	> "plant a seed and watch it grow"
+
+- [Vizster: Visualizing Online Social Networks][vizster]
+
+	> "start with what you know, then grow"
+
+## Context View and Focus View
 ACD Image Browser
 
 刚开始不需要为用户提供一个最优的方案，而是在一个简单的原型上，
@@ -45,3 +54,5 @@ ACD Image Browser
 
 
 [exception-handling]: http://programmers.stackexchange.com/questions/231057/exceptions-why-throw-early-why-catch-late/231064#231064}
+[TreePlus]: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1703363
+[vizster]: http://vis.stanford.edu/papers/vizster
