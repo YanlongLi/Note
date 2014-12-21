@@ -8,6 +8,30 @@
 	du -s * | sort -nr | head | cut -f2 | parallel -k du -sh 
 	```
 
+- remove blank lines in file
+
+	```bash
+	sed '/^$/d' /tmp/data.txt > /tmp/output.txt 
+	```
+
+- substitute space in filename with underline
+
+	```bash
+	for f in *;do mv "$f" "${f// /_}";done
+	```
+
+- show colored git log
+
+	```git
+	git log --graph --oneline --all --decorate --color
+	```
+- generate a 30x30 matrix
+	- fold - wrap each input line to fit in specified width
+
+	```bash
+	xxd -p /dev/urandom | fold -60| head -30| sed 's/\(..\)/\1 /g'
+	```
+
 ## JavaScript
 
 ### JavaScript Object
@@ -285,6 +309,27 @@ function d3_layout_hierarchyLinks(nodes) {
 }));
 ```
 
+## C++
+### Split String `strtok`
+
+```C++
+#include <stdio.h>
+#include <string.h>
+
+int main ()
+{
+  char str[] ="- This, a sample string.";
+  char * pch;
+  printf ("Splitting string \"%s\" into tokens:\n",str);
+  pch = strtok (str," ,.-");
+  while (pch != NULL)
+  {
+    printf ("%s\n",pch);
+    pch = strtok (NULL, " ,.-");
+  }
+  return 0;
+}
+```
 
 [js closure]: http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html
 [js apply and call]: http://odetocode.com/blogs/scott/archive/2007/07/04/function-apply-and-function-call-in-javascript.aspx

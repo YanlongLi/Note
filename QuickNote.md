@@ -41,6 +41,29 @@
 - 链接外部CSS文件
 `<link rel="stylesheet" type="text/css" href="mystyle.css">`
 
+## CSS
+
+CSS继承
+
+```
+所有元素可继承：visibility和cursor
+
+内联元素和块元素可继承：letter-spacing、word-spacing、white-space、line-height、color、
+font、font-family、font-size、font-style、font-variant、font-weight、text- decoration、
+text-transform、direction
+
+块状元素可继承：text-indent和text-align
+
+列表元素可继承：list-style、list-style-type、list-style-position、list-style-image
+
+表格元素可继承：border-collapse
+
+不可继承的：display、margin、border、padding、background、
+height、min-height、max- height、width、min-width、max-width、
+overflow、position、left、right、top、 bottom、z-index、
+float、clear、table-layout、vertical-align
+```
+
 ## javascript
 
 ### 按照字母序比较字符串 
@@ -301,13 +324,21 @@ add `set bell-style none` to `/etc/inputrc`
 
 ### [MyPaint基础小教程][]
 
+### qv4l2
+camera setting
+
 ### [Mathjax 符号对照表][mathjax symbols]
 
 ### [farbox协作规则][farbox editor]
 
-## Split cue file to flac
-[cue spliting][]
-`shnsplit`
+### Split cue file to flac
+[cue spliting][] `shnsplit`
+
+### Convert single ape file to ape
+
+```bash
+ffmpeg -i inputaudio.ape outputaudio.flac
+```
 
 ## To-Read
 - [Markdown and reStructuredText][]
