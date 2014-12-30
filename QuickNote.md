@@ -66,6 +66,15 @@ float、clear、table-layout、vertical-align
 
 ## javascript
 
+### NPM
+
+#### `npm install` point python version
+
+- `export PYTHON=python2.7` before execute `nmp install`
+- `npm --python=python2.7 install`
+- `npm config set python python2.7` to set python2 permantely
+
+
 ### 按照字母序比较字符串 
 使用`string.localeCompare()`
 
@@ -232,8 +241,15 @@ do
 	echo $name+$ext;
 done
 ```
+
 ## Git
 [git 操作详解][git remote]
+
+```bash
+git reset HEAD@{1}
+// Git keeps a log of all ref updates (e.g., checkout, reset, commit, merge). You can view it by typing:
+git reflog
+```
 
 ![git flow](_img/git-flow.jpg)
 

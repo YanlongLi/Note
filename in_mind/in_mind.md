@@ -7,6 +7,10 @@
 
 ## Quantum Treemap: rectagle内部可以放置内容
 
+## Focus Switch
+
+[the brain][]
+
 ## a consistent set of interaction techniques
 
 ## Increamental Exploration
@@ -18,6 +22,10 @@ any given time. -- [TreePlus][TreePlus]
 - `TouchGraph` layout algorithm
 
 ## The use of Background Color, Opacity, Shadow and Texture
+> The transparency techniques have been used in a number of 3D
+visualization systems, such as the Information Cube,Cone-Tree
+and the Spiral Calendar,etc. These applications mainly aim to
+solve the overlapping problem.
 
 ## Suggestion Based Technique
 
@@ -42,3 +50,5 @@ ACD Image Browser
 
 [TreePlus]: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1703363
 [vizster]: http://vis.stanford.edu/papers/vizster
+[the brain]: http://www.thebrain.com/
+

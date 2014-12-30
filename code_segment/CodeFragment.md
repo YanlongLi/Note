@@ -34,6 +34,94 @@
 
 ## JavaScript
 
+### implement oo using closure
+
+```JavaScript
+var mypackage = {};
+/**********************************************************
+ *
+ * implement OO using closure
+ *
+ **********************************************************/
+mypackage.A = function(args){
+	/*
+	 * variables
+	 */
+	var data;
+	/*
+	 * initialize
+	 */
+	data = "default value";
+	/*
+	 * object/function
+	 */
+	function A(){
+		/*
+		 * may add some feature here
+		 * return data or implement toString function
+		 */
+		return data;
+	}
+	/*
+	 * function
+	 */
+	A.print = function(){
+		console.log(data);
+	};
+	A.change = function(d){
+		data = d;
+	};
+	/*
+	 * return the function/object
+	 */
+	return A;
+};
+
+var a1 = mypackage.A();
+var a2 = mypackage.A();
+a1.print();
+a2.print();
+a1.change("a1 new value");
+a1.print();
+a2.print();
+
+/**********************************************************
+ *
+ * implement singleton using closure
+ *
+ **********************************************************/
+
+mypackage.Singleton = (function(){
+	/*
+	 * variables
+	 */
+	var data;
+	/*
+	 * initialize
+	 */
+	data = "default value";
+	function Singleton(){}
+	Singleton.print = function(){
+		console.log(data);
+	};
+	Singleton.change = function(d){
+		data = d;
+	};
+	return function(){
+		return Singleton;
+	}
+})();
+
+var s1 = mypackage.Singleton();
+var s2 = mypackage.Singleton();
+s1.print();
+s2.print();
+s1.change("s1 new value");
+s1.print();
+s2.print();
+```
+
+
 ### JavaScript Object
 
 [From][Developers Should Know About JavaScript]
