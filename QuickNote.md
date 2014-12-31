@@ -243,12 +243,20 @@ done
 ```
 
 ## Git
+[Git Book][]
+
 [git 操作详解][git remote]
 
 ```bash
 git reset HEAD@{1}
-// Git keeps a log of all ref updates (e.g., checkout, reset, commit, merge). You can view it by typing:
+### Git keeps a log of all ref updates (e.g., checkout, reset, commit, merge). You can view it by typing:
 git reflog
+
+### delete branch remote
+git push origin --delete <branchName>
+## or
+git push origin :<branchName>
+
 ```
 
 ![git flow](_img/git-flow.jpg)
@@ -377,6 +385,7 @@ ffmpeg -i inputaudio.ape outputaudio.flac
 [mathjax symbols]: http://www.lyyz.net/blog/user1/zyair/archives/2012/570.html
 [farbox editor]: http://help.farbox.com/read/basic-writting
 
+[Git Book]: http://git-scm.com/book/en/v2
 [git branch model]: http://nvie.com/posts/a-successful-git-branching-model/
 [git remote]: http://www.ruanyifeng.com/blog/2014/06/git_remote.html
 
