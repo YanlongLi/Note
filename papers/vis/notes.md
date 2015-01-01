@@ -1,3 +1,4 @@
+
 ## SpaceTree: Supporting Exploration in Large Node Link Tree, Design Evolution and Empirical Evaluation
 
 - Author: Catherine Plaisant, Jesse Grosjean, Benjamin B. Bederson
@@ -103,4 +104,19 @@ with squarified treemaps?_
 the horizontal-vertical manner. In EncCon, this is achieved
 in the circular manner, in which all rectangles are placed in the
 north–east–south–west order around four sides of the parent rectangle.
+
+
+
+## TreeJuxtaposer: Scalable Tree Comparison using Focus+Context with Guaranteed Visibility
+
+- Author: Tamara Munzner, Francois Guimbretiere, Serdar Tasiran, Li Zhang, Yunhong Zhou
+- Affiliation: 
+
+### Abstract
+Structual comparison of large trees.  
+System designed to support the comparison task for large trees of several hundred thousand nodes.  
+Concept of "Guaranteed Visibility"  
+A new Methodology for detailed structural comparison between two trees.  
+A new nearly-linear algorithm for computing the best corresponding node from one tree to another.  
+A new rectilinear Focus+Context technique for navigation.  
 
