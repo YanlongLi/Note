@@ -4,6 +4,10 @@
 
 - latexmk
 
+	[A sample makefile for a paper in LaTeX](https://gist.github.com/yy/808914)  
+	[pdflatex makefile](https://github.com/ransford/pdflatex-makefile)  
+	[Make and Makefiles: A Quick Introduction](https://www.stat.auckland.ac.nz/~stat782/downloads/make-tutorial.pdf)
+
 ## Somebody's Blog
 
 [Fenng](http://dbanotes.net/)
