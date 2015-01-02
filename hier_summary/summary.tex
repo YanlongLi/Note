@@ -1,3 +1,7 @@
+%        File: summary.tex
+%     Created: Fri Jan 02 07:00 PM 2015 C
+% Last Change: Fri Jan 02 07:00 PM 2015 C
+%
 \documentclass{article}
 \usepackage{ctex}
 \usepackage[a4paper]{geometry}
@@ -12,6 +16,14 @@
 
 \begin{document}
 \normalem
+\section{层次数据可视化应用的领域(application domains)}
+公司组织结构(hierarchical organization of companies)，
+新闻话题以及子话题(news topics and subtopics)，
+文件/目录系统(file/directory system)、
+产品分类、
+生物进化树(phylogenetic trees in biology)
+
+
 \section{层次数据可视化}
 数据可视化中的很多数据都是具有层次结构的，比如说电脑中的文件、公司组织机构等等。一些多维数据尽管没有层次信息，
 有时候还是需要通过按照不同的维度分组来分析不同维度的属性上的关系，不同的分组方法就会产生不同的层次结构。
@@ -160,6 +172,9 @@ Treemap用在动态层次数据可视化上一般是通过将treemap的显示属
 当treemap用于静态的层次结构数据分析来发现数据属性之间的关联时，用来进行分组的属性的顺序会比较重要，不合理的分组顺序会产生毫无意义的结果，
 ，所以要根据数据的特点进行合理的分组。
 
+
+在展现形式上，由于非专业人士都treemap这种形式不熟悉，所以treemap方法的学习成本较高。\cite{STASKO2000}
+
 \subsection{动态层次数据可视化的论文}
 \begin{itemize}
 	\item \cite{burch2011} 
@@ -241,7 +256,35 @@ trends, contertrends, periodicity, temporal shifts, anomaly，(图\ref{fig:burch
 		\emph{SmartMoney Map of the Market}
 \end{itemize}
 
+\section{交互方式}
+层次数据可视化中常用的交互方式，有些方式是node-link based的可视化方法和space-filling based的可视化方法通用的，
+有些则可能只适用于其中的某一中。
+\subsection{node-link based techniques:}
+
+\emph{re-focus/re-center}: 根据需要，可能需要将用户关注的节点放置在显示区域的中央，便于查看关注节点的属性以及该节点和其他节点的关系。
+
+\emph{expanding and collapsin}: 节点数目较多的时候可以通过折叠/展开的方式暂时隐藏无关的节点来节省空间。
+
+\subsection{space-filling based techniques:}
+
+\emph{zoom in/out}: 在基于treemap的实现方式中，深层次的节点所占区域较小而无法识别，可以通过放大/缩小的方式查看，
+所带来的缺点也很明显，放大后context信息的缺失，zoom in/out 的方式也同样适用于具有大量节点的node-link图中，
+一般需要另一个view来保留context信息。
+
+\subsection{其他}
+时序层次数据的可视化，timeline是时间概念可视的常用方式，因此交互上常用\emph{selecting specific time interval}，
+然后对应更改其他视图的显示，用这样的方式让用户探索数据在时间上的特征。
+
+同时，\emph{filter}也是可视化中常用的交互手段，用来帮助用户探索数据在某个属性上特定值或特定的值域的特征。
+
+
+\section{层次数据可视化中Focus+Overview technique的应用和实现}
+
 \section{TODO}
+
+首先论文的目的，解决了什么问题，这个问题有哪些常用的方法，论文中使用了什么样的方法，达到了什么样的效果。
+其次，实现中使用了什么样的交互方式，这些交互方式是为了一个什么样的目的。
+
 \begin{itemize}
 	\item 看论文总结：
 		\begin{itemize}
