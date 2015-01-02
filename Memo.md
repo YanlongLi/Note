@@ -1,5 +1,15 @@
 
 
+## Skills to master
+
+- latexmk
+
+## Somebody's Blog
+
+[Fenng](http://dbanotes.net/)
+
+[Donghao Ren](https://donghaoren.org/)
+
 
 ### [2015-01-01] Open Srouce Report Card
 
