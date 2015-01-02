@@ -31,7 +31,7 @@ Focus Switch(refine the focus of interest)
 -	rectangular division algorithm
 - an experimental evaluation of EncCon’s layout algorithm
 - a new focusþcontext viewing technique for the navigation of large hierarchies
-	- zoomingþlayering concept rather than traditional enlarge + embedded concept
+	- zooming-layering concept rather than traditional enlarge + embedded concept
 
 ### Differences
 ### Benefits
@@ -120,3 +120,109 @@ A new Methodology for detailed structural comparison between two trees.
 A new nearly-linear algorithm for computing the best corresponding node from one tree to another.  
 A new rectilinear Focus+Context technique for navigation.  
 
+
+## TreePlus: Interactive Exploration of Networks with Enhanced Tree Layouts
+
+- Author: Bongshin Lee, Cynthia S. Parr, Catherine Plaisant, Benjamin B. Bederson, Vladislav D. Veksler, Wayne D. Gray, and Christopher Kotfila
+- Affiliation: Human-ComputerInteractionLaboratoryattheUniversity of Maryland
+- Year: 2006
+
+### Abstract
+effective interactive layouts for large graphs.  
+“Plant a seed and watch it grow.”  
+
+### Design Goals
+
+- Take advantage of human perception of trees
+- make as many nodes of readable as apssible
+- maximize stability of layout
+- offer preview before commiting
+- provide multistep animations so users can follow changes
+
+### Showing hidden graph structure
+
+- hilighting and preview of adjacent nodes
+- animated update of tree structure
+- visual hints of graph structure
+
+### Questions
+
+__What makes this paper special?__
+
+__What problems does this paper solve?__
+
+
+## Visual Exploration of Time-Series Data with Shape Space Projections
+
+__not quite understand this paper tell__
+
+- Author: Matthew O. Ward and Zhenyu Guo
+- Affiliation: Computer Science Department Worcester Polytechnic Institute Worcester, MA USA
+- Year: 2011
+
+### Abstract
+
+Time-series Data Visulization  
+Typical tasks: identifying cyclic behaviour, outliers, trends, periods of time that share distinctive shape characteristic.  
+None to date is a complete solution.  
+Borrowing idea from text analysis, [n-gram][]
+
+[n-gram]: http://en.wikipedia.org/wiki/N-gram
+
+## VISUALIZING DYNAMIC QUANTITATIVE DATA IN HIERARCHIES TimeEdgeTrees: Attaching Dynamic Weights to Tree Edges
+
+- Author: Michael Burch, Daniel Weiskopf
+- Affiliation: VISUS, University of Stuttgar
+- Year: IVAPP2011
+
+### Abstract
+
+visualizing the dynamics of quantitative data in static hierarchical structure.  
+orthogonal tree diagrams as a timeline.  
+use color coding and varying thicknesses to represent the time-varying data.  
+explore trends, countertrends, periodicity, temporal shifts, or anomalies during the evolution synchronously.
+
+![time edge trees](_img/time-edge-trees.png)
+
+### Interactive Features
+
+- expanding and collapsing of subhierarchies
+- selecting specific time interval
+- weight filtering
+- geometric zomming
+- apply color coding
+- thickness slider
+- labeling
+- detail-on-demand
+
+### Applications
+water level data for German rivers
+
+### Questions
+__Any drawbacks of this vis technique?__
+
+It shows the characteristics of some nodes, while we couldn't get the
+comparison info from this technique.
+
+__Basic idea of TimeEdgeTree?__
+
+encode time information on edges
+
+
+## TimeRadar Trees: Visualizing Daymamic Compound Digraphs
+
+- Author: M.Burch, S.Diehl
+- Affiliation: University of Trier, Germany
+- Year: VGTC2008
+
+### Basic Idea
+It uses radial tree layout to draw the hierarchy, and circle sectors to represent the temporal change of edges in the digraphs.  
+several interaction techniques that allow the users to explore the structural and temporal data.  
+Smooth animations help them to track the transitions between views.  
+visualize dependencies between elements in the hierarchy.
+
+### Applications
+
+### Questions
+
+__What's the meaning of "sequences of compound digraphs with edge weights"?__
