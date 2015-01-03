@@ -13,8 +13,7 @@ reading notes of blog articles or materials
 Paper Notes
 ------
 
-[Vis Paper Notes](papers/vis/notes.md)
---------
+### [Vis Paper Notes](papers/vis/notes.md)
 
 [Code Segment](code_segment/CodeFragment.md)
 ------
