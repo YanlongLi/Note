@@ -48,3 +48,5 @@ cbatticon
 mendeleydesktop
 ctags
 nettools
+vim-supertab
+vim-auto-pairs
