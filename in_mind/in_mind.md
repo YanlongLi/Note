@@ -11,6 +11,10 @@
 
 [the brain][]
 
+## Stack Approach
+
+TimeRadialTree
+
 ## a consistent set of interaction techniques
 
 ## Increamental Exploration
@@ -47,6 +51,11 @@ ACD Image Browser
 
 给用户以选择，让用户选择去除什么，留下什么
 
+## Problems
+
+_What are the Common Used Techniques and their characterristics in Vis?
+these techniques are suitable for what kind of data?
+what kind of character or pattern are these techniques aimed to?_
 
 [TreePlus]: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1703363
 [vizster]: http://vis.stanford.edu/papers/vizster
