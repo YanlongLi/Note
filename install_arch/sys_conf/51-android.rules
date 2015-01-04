@@ -1,0 +1,1 @@
+ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e26", SYMLINK+="libmtp",  MODE="660", ENV{ID_MTP_DEVICE}="1"
