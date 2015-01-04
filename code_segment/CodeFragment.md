@@ -1,6 +1,13 @@
 
 
 ## Bash Commands
+- read lines of a file
+
+	```bash
+	while read p; do
+		echo $p
+	done <peptides.txt
+	```
 
 - find top ten large files or directories 
 
