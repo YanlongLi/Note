@@ -1,5 +1,37 @@
 
+## JavaScript代码结构组织良好的五个特点
+
+[From][js organize]
+
+合理的组织JS代码，包括**始终声明依赖**，**为第三方库代码添加shim**，**定义和调用分离**，**异步加载依赖**，**模块不依赖全局变量**。
+
+其中包括`require()`和`define()`的用法。
+
+定义和调用分离的例子：
+
+```javascript
+// js/User.js
+define(functino(require) {
+	var User = function(name, greeter) {
+		this.name = name;
+		this.greeter = greeter;
+	};
+	User.prototype.sayHello = function() {
+		this.greeter("Hello, " + this.name);
+	};
+	return User;
+});
+
+// js/my-page.js
+define(functino(require) {
+	var User = require('js/User');
+	var user = new User('Alice', window.alert);
+	user.sayHello();
+}); 
+```
+
 ## Consistent Hashing
+
 [From][Consistent Hashing]
 
 在动态变化的Cache环境中判断哈希算法好坏的四个定义：
@@ -35,3 +67,4 @@ _How does `Consistent Hashing` satisfy definations above?_
 
 [exception-handling]: http://programmers.stackexchange.com/questions/231057/exceptions-why-throw-early-why-catch-late/231064#231064}
 [Consistent Hashing]: http://blog.csdn.net/cywosp/article/details/23397179
+[js organize]: http://saebbs.com/forum.php?mod=viewthread&tid=30565&extra=page=2
