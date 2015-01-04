@@ -221,8 +221,40 @@ several interaction techniques that allow the users to explore the structural an
 Smooth animations help them to track the transitions between views.  
 visualize dependencies between elements in the hierarchy.
 
+this paper gives a different point on tree/graph, it visualizes 
+the weighted relation of node in tree/graph.
+it use circle sectors to represent edges.
+
+**common ways to represent edges**:color, shape, style, thickness, orientation, connection
+
+### encoding
+
+![graph encoding](_img/time-radar-tree.png)
+
+advantage: no edge crossings leading to visual cluster
+
 ### Applications
+
+### Soccer Match Result
+
+### Triplet Codes in Gene Sequence
+
+encode the codon distribution in gene sequence.
+
+advantage: it encode the match to color in outer circle, so 
+it can be used to get an overview of the incomming edges.
+a detail-on-demaind request may help to explore info at match level.
 
 ### Questions
 
 __What's the meaning of "sequences of compound digraphs with edge weights"?__
+
+__TimeRadarTree, what's the relation with time?__
+
+### Comments
+
+这篇论文的主要不同之处在于对图或者树的加权边进行可视化，通过encode边来显示点与点之间的关系。
+从一个Overview中可以看出关系的大体情况，从这点出发，用户可以发现一些有价值的信息，再进行深一步的探索。
+交互方式主要集中于zoom in/out以及highlight，brushing，tool tips上。
+平滑的动画(smooth animatiion)有助于用户跟踪可视结果的变化。
+**Application Domains**: 层次数据中叶子节点之间的关系，所以app domain比较局限在这一类特殊的tree上，
