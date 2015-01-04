@@ -237,7 +237,7 @@ Server = http://repo.archlinuxcn.org/$arch
 
 ### xsel xclip udisks2 p7zip scrot zip unzip nitrogen
 
-### convmv cups filezilla jdk7
+### net-tools convmv cups filezilla jdk7
 
 ### rsync openssh mlocate
 
