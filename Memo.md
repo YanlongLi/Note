@@ -1,4 +1,14 @@
 
+## TODO
+
+### script to install packages and init the corresponding configuration files.
+
+[usage of pacman][]
+
+## Problems
+
+### How to backup/restore package list in arch?
+
 
 ## Skills to master
 
@@ -8,17 +18,17 @@
 	[pdflatex makefile](https://github.com/ransford/pdflatex-makefile)  
 	[Make and Makefiles: A Quick Introduction](https://www.stat.auckland.ac.nz/~stat782/downloads/make-tutorial.pdf)
 
+- bash script
+
 ## Somebody's Blog
 
 [Fenng](http://dbanotes.net/)
 
 [Donghao Ren](https://donghaoren.org/)
 
-
 ### [2015-01-01] Open Srouce Report Card
 
 [progress report for open source contributions on github][osrc]
-
 
 ### [2014-12-30] Some Links From DHR
 
@@ -32,7 +42,7 @@ asynchronous helper library for JavaScript
 [raphaeljs][]
 
 
-
+[usage of pacman]: https://wiki.archlinux.org/index.php/pacman#Querying_package_databases
 [osrc]: https://osrc.dfm.io/
 [queue.js]: https://github.com/mbostock/queue
 [chronoline.js]: http://stoicloofah.github.io/chronoline.js/
