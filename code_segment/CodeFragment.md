@@ -13,6 +13,11 @@
 	```bash
 	sed '/^$/d' /tmp/data.txt > /tmp/output.txt 
 	```
+- remove blank lines using grep
+
+	```bash
+	grep . filename > newfilename	
+	```
 
 - substitute space in filename with underline
 
