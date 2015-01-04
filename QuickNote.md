@@ -1,3 +1,28 @@
+## usage of rsync
+
+### start rsync daemon
+
+```
+systemctl start rsyncd.service
+```
+
+### `/etc/rsyncd.conf`
+
+```
+man rsyncd.conf
+```
+
+### connnect to rsync daemon
+
+```
+rsync -av hostname::module_name # list files
+rsync -av hostname::module_name /dest/path # copy files
+```
+### Problems
+
+1. how to config authorized user?
+
+[config example][rsync config example]
 
 ## Latex
 ### 带边框的文本
@@ -242,106 +267,6 @@ do
 done
 ```
 
-## Git
-[Git Book][]
-
-[git 操作详解][git remote]
-
-```bash
-git reset HEAD@{1}
-### Git keeps a log of all ref updates (e.g., checkout, reset, commit, merge). You can view it by typing:
-git reflog
-
-### delete branch remote
-git push origin --delete <branchName>
-## or
-git push origin :<branchName>
-
-```
-
-![git flow](_img/git-flow.jpg)
-
-几个概念:
-
-- 仓库
-- 提交
-- 分支
-- 日志
-
-```git
-$ git remote add origin some-url #设置仓库
-$ git commit --amend -m "commit message." #修补提交（修补最近一次的提交而不创建新的提交）
-$ git push -u origin master #将代码从本地传回到仓库
-$ git branch checkout master # 切换到主分支
-
-$ git log # 查看提交信息
-$ git log --pretty=oneline # 以整洁的单行形式显示提交信息
-$ git log --stat # 查看提交信息及更新的文件
-
-$ git archive --format tar --output /path/to/file.tar master # 将 master 以 tar 格式打包到指定文件
-```
-使用 Git 的一些基本守则：
-当要commit/提交patch时：
-
-- 使用 git diff --check 检查行尾有没有多余的空白
-- 每个 commit 只改一件事情。如果一个文档有多个变更，使用 git add --patch 只选择文档中的部分变更进入 stage
-- 写清楚 commit message
-
-### Git Branch Model
-两个branch of infinite lifetime:
-
-- origin/master: code of `HEAD` always reflect the `product-ready` state
-- origin/develop: code of `HEAD` always relect the latest changes for next release
-
-principle of `master` and `develop`:
-> When the source code in the develop branch reaches a stable point and is ready to be released, all of the changes should be merged back into master somehow and then tagged with a release number. 
-
-Under this condition, a `git hook script` can be used to generate software of new version.
-
-article [git branch model][] gives three type of support branches
-
-- feature branch
-	- branch off from `develop` and merged back into `develop` eventually
-
-```bash
-$ git checkout -b myfeature develop #Switched to a new branch "myfeature"
-(do something)
-$ git checkout develop #Switched to branch 'develop'
-$ git merge --no-ff myfeature #Updating
-(Summary of changes)
-$ git branch -d myfeature #Deleted branch myfeature
-$ git push origin develop 
-```
-
-- release branch
-	- branch off from `develop` and merged back into `develop` and `master` eventually
-	- when `develop` branch is in a desired state for next release and the version number is decided.
-	
-```bash
-$ git checkout -b release-1.2 develop #Switched to a new branch "release-1.2"
-(modify files to the new version number)
-$ git commit -a -m "Bumped version number to 1.2"
-(apply bug fixes)
-(...)
-$ git checkout master #Switched to branch 'master'
-$ git merge --no-ff release-1.2 #Merge made by recursive.
-(Summary of changes)
-$ git tag -a 1.2
-```
-```bash
-$ git checkout develop #Switched to branch 'develop'
-$ git merge --no-ff release-1.2
-```
-```bash
-$ git branch -d release-1.2
-```
-			
-- hotfix branch
-	- branch off from `develop` and merged back into `develop` and `master` eventually
-
-	![hot fix branch](_img/hotfix-branches.png)
-
-
 ## Other
 ### do not bell on tab-completion in linux
 add `set bell-style none` to `/etc/inputrc`
@@ -366,15 +291,16 @@ ffmpeg -i inputaudio.ape outputaudio.flac
 
 ## To-Read
 - [Markdown and reStructuredText][]
-- [GitHub Mark][]
 - [Draw Presentable Trees][pymag-trees]: algorithms to draw trees
 
+
+
+[rsync config example]: http://www.jveweb.net/en/archives/2011/01/running-rsync-as-a-daemon.html
 [CSS Selector]: http://www.w3school.com.cn/css/css_syntax_descendant_selector.asp
 [css design pattern]: http://www.hicss.net/separation-of-powers-model-in-css-design-patterns/
 [WikiBooks-Boxes]: http://en.wikibooks.org/wiki/LaTeX/Boxes
 [unix-linux-extract-filename-and-extension-in-bash]: http://www.cyberciti.biz/faq/unix-linux-extract-filename-and-extension-in-bash/
 
-[GitHub Mark]: https://github.com/github/markup
 [Markdown and reStructuredText]: https://gist.github.com/dupuy/1855764
 [MyPaint基础小教程]: https://forum.suse.org.cn/viewtopic.php?f=6&t=900
 [js localeCompare]: http://www.tutorialspoint.com/javascript/string_localecompare.htm
@@ -384,10 +310,6 @@ ffmpeg -i inputaudio.ape outputaudio.flac
 [PDF file Presentation]: http://sites.stat.psu.edu/~surajit/present/pdf.html
 [mathjax symbols]: http://www.lyyz.net/blog/user1/zyair/archives/2012/570.html
 [farbox editor]: http://help.farbox.com/read/basic-writting
-
-[Git Book]: http://git-scm.com/book/en/v2
-[git branch model]: http://nvie.com/posts/a-successful-git-branching-model/
-[git remote]: http://www.ruanyifeng.com/blog/2014/06/git_remote.html
 
 [cue spliting]: https://wiki.archlinux.org/index.php/APE+CUE_Splitting
 
