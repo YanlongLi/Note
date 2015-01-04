@@ -297,7 +297,7 @@ add below to **.bashrc**
 
 #### vim 插件
 
-```
+```bash
 pacman -S vim-auto-pairs vim-runtime vim-supertab ctags
 ```
 
@@ -315,7 +315,7 @@ pacman -S vim-auto-pairs vim-runtime vim-supertab ctags
 
 copy file to **/usr/share/fonts/zh_CN/TrueType**
 
-```
+```bash
 cd /usr/share/fonts/zh_CN/TrueType
 sudo mkfontscale
 sudo mkfontdir
@@ -330,7 +330,7 @@ unzip file to **/usr/share/fonts/Adobe**
 
 #### 常用命令
 
-```
+```bash
 fc-list
 ```
 
@@ -342,8 +342,36 @@ fc-list
 
 **/etc/shadowsocks/xx.json**
 
-```
+```bash
 systectl start shadowsocks@xx
+```
+
+### VirtualBox
+
+####  virtualbox virtualbox-guest-iso virtualbox-host-dkms net-tools virtualbox-ext-oracle linux-header
+
+```bash
+dkms install vboxhost/$(pacman -Q virtualbox|awk '{print $2}'|sed 's/\-.\+//') -k $(uname -rm|sed 's/\ /\//')
+systemctl enable dkms
+modprobe vboxdrv
+```
+
+create file `/etc/modules-load.d/virtualbox.conf` and add content below
+
+```bash
+vboxdrv vboxnetadp vboxnetflt vboxpci
+```
+
+reload vbox
+
+```bash
+vboxreload
+```
+
+add user to vboxusers group
+
+```bash
+gpasswd -a $USER vboxusers
 ```
 
 ## Other Software
