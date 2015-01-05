@@ -17,7 +17,7 @@
 - 日志
 - **HEAD**?
 
-###  Frequently Used Commands
+### Frequently Used Commands
 
 ```git
 $ git remote add origin some-url #设置仓库
@@ -31,6 +31,21 @@ $ git log --stat # 查看提交信息及更新的文件
 
 $ git archive --format tar --output /path/to/file.tar master # 将 master 以 tar 格式打包到指定文件
 ```
+
+### HEAD orgin master
+
+[HEAD orgin master][]
+
+**HEAD**: the current commit your repo is on. Most of the time HEAD points to the latest commit in your branch, but that doesn't have to be the case. HEAD really just means "what is my repo currently pointing at". Thanks svick for the heads up on this one (no pun intended)  
+In the event that the commit HEAD refers to is not the tip of any branch, this is called a "detached head".
+
+**master**: The name of the default branch that git creates for you when first creating a repo. In most cases, "master" means "the main branch". Most shops have everyone pushing to master, and master is considered the definitive view of the repo. But it's also common for release branches to be made off of master for releasing. Your local repo has its own master branch, that almost always follows the master of a remote repo.
+
+**origin**: The default name that git gives to your main remote repo. Your box has its own repo, and you most likely push out to some remote repo that you and all your coworkers push to. That remote repo is almost always called origin, but it doesn't have to be.
+
+HEAD is an official notion in git, HEAD always has a well defined meaning. master and origin are common names usually used in git but they don't have to be.
+
+
 
 ### Usage Rules
 
@@ -134,3 +149,4 @@ then commit the change and push change to remote repo.
 [git branch model]: http://nvie.com/posts/a-successful-git-branching-model/
 [git remote]: http://www.ruanyifeng.com/blog/2014/06/git_remote.html
 [GitHub Mark]: https://github.com/github/markup
+[HEAD orgin master]: http://stackoverflow.com/questions/8196544/what-are-the-git-concepts-of-head-master-origin
