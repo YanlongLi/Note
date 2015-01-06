@@ -18,6 +18,7 @@ man rsyncd.conf
 rsync -av hostname::module_name # list files
 rsync -av hostname::module_name /dest/path # copy files
 ```
+
 ### Problems
 
 1. how to config authorized user?
@@ -65,131 +66,6 @@ rsync -av hostname::module_name /dest/path # copy files
 `<meta http-equiv="content-type" content="text/html; charset=UTF-8">`
 - 链接外部CSS文件
 `<link rel="stylesheet" type="text/css" href="mystyle.css">`
-
-## CSS
-
-CSS继承
-
-```
-所有元素可继承：visibility和cursor
-
-内联元素和块元素可继承：letter-spacing、word-spacing、white-space、line-height、color、
-font、font-family、font-size、font-style、font-variant、font-weight、text- decoration、
-text-transform、direction
-
-块状元素可继承：text-indent和text-align
-
-列表元素可继承：list-style、list-style-type、list-style-position、list-style-image
-
-表格元素可继承：border-collapse
-
-不可继承的：display、margin、border、padding、background、
-height、min-height、max- height、width、min-width、max-width、
-overflow、position、left、right、top、 bottom、z-index、
-float、clear、table-layout、vertical-align
-```
-
-## javascript
-
-### NPM
-
-#### `npm install` point python version
-
-- `export PYTHON=python2.7` before execute `nmp install`
-- `npm --python=python2.7 install`
-- `npm config set python python2.7` to set python2 permantely
-
-
-### 按照字母序比较字符串 
-使用`string.localeCompare()`
-
-[tutorialspoint][js localeCompare]
-
-### 事件处理的运行环境
-
-- 通过设置属性注册事件处理函数`e.onClick = function(){}`: _this指目标对象_
-- `addEventListener("click", function(){}, true)`： _this指目标对象_
-- `attachEvent("onclick", function(){})`： 作为函数调用，_this指全局对象windows_
-
-调用顺序：
-
-1. 设置属性/HTML属性
-2. addEventListener()
-3. attachEvent()
-
-事件冒泡和捕获的顺序相反
-
-## CSS
-
-### CSS设计技巧
-
-[from][css design pattern]
-
-> seperate `width` `padding/border` `margin`
-
-- use a additional label to separate `width` and `padding/border`
-
-```CSS
-.box{width:300px; height:80px;}
-.box .roundBox{padding:10px;}
-.box .roundBox-modifed{padding:10px 15px; border:1px solid #ccc;}
-```
-
-- separate `margin`
-
-```CSS
-.m10{margin:10px}
-.m15{margin:15px}
-.m30{margin:30px}
-.mt5{margin-top:5px}
-.mt10{margin-top:10px}
-.mt15{margin-top:15px}
-.mt20{margin-top:20px}
-.mt30{margin-top:30px}
-.mt50{margin-top:50px}
-.mt100{margin-top:100px}
-.mb10{margin-bottom:10px}
-.mb15{margin-bottom:15px}
-.mb20{margin-bottom:20px}
-.mb30{margin-bottom:30px}
-.mb50{margin-bottom:50px}
-.mb100{margin-bottom:100px}
-.ml5{margin-left:5px}
-.ml10{margin-left:10px}
-.ml15{margin-left:15px}
-.ml20{margin-left:20px}
-.ml30{margin-left:30px}
-.ml50{margin-left:50px}
-.ml100{margin-left:100px}
-.mr5{margin-right:5px}
-.mr10{margin-right:10px}
-.mr15{margin-right:15px}
-.mr20{margin-right:20px}
-.mr30{margin-right:30px}
-.mr50{margin-right:50px}
-.mr100{margin-right:100px}
-```
-### 选择器[CSS Selector][]
-
-- 组选择器
-
-		h1, h2, h3, .class1{}
-
-- 派生(后代)选择器
-
-        li{}
-        strong{}
-        li string{}
-
-- 子元素选择器
-
-        h1 > strong {}
-
-- 相邻兄弟选择器
-
-        h1 + p {}
-
-
 
 ## Vim
 
@@ -296,14 +172,11 @@ ffmpeg -i inputaudio.ape outputaudio.flac
 
 
 [rsync config example]: http://www.jveweb.net/en/archives/2011/01/running-rsync-as-a-daemon.html
-[CSS Selector]: http://www.w3school.com.cn/css/css_syntax_descendant_selector.asp
-[css design pattern]: http://www.hicss.net/separation-of-powers-model-in-css-design-patterns/
 [WikiBooks-Boxes]: http://en.wikibooks.org/wiki/LaTeX/Boxes
 [unix-linux-extract-filename-and-extension-in-bash]: http://www.cyberciti.biz/faq/unix-linux-extract-filename-and-extension-in-bash/
 
 [Markdown and reStructuredText]: https://gist.github.com/dupuy/1855764
 [MyPaint基础小教程]: https://forum.suse.org.cn/viewtopic.php?f=6&t=900
-[js localeCompare]: http://www.tutorialspoint.com/javascript/string_localecompare.htm
 [vim resize window]: http://vim.wikia.com/wiki/Resize_splits_more_quickly
 [latex natbib]: http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#Natbib
 [latex citation style]: http://sites.stat.psu.edu/~surajit/present/bib.htm

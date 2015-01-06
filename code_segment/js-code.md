@@ -1,6 +1,35 @@
 
 # JavaScript
 
+
+## NPM
+
+### `npm install` point python version
+
+- `export PYTHON=python2.7` before execute `nmp install`
+- `npm --python=python2.7 install`
+- `npm config set python python2.7` to set python2 permantely
+
+
+## 按照字母序比较字符串 
+使用`string.localeCompare()`
+
+[tutorialspoint][js localeCompare]
+
+## 事件处理的运行环境
+
+- 通过设置属性注册事件处理函数`e.onClick = function(){}`: _this指目标对象_
+- `addEventListener("click", function(){}, true)`： _this指目标对象_
+- `attachEvent("onclick", function(){})`： 作为函数调用，_this指全局对象windows_
+
+调用顺序：
+
+1. 设置属性/HTML属性
+2. addEventListener()
+3. attachEvent()
+
+事件冒泡和捕获的顺序相反
+
 ## Ajax Request using JS and jQuery
 
 [jquery ajax][]
@@ -397,3 +426,4 @@ function d3_layout_hierarchyLinks(nodes) {
 [js apply call bind]: http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/
 [js closure]: http://javascriptissexy.com/understand-javascript-closures-with-ease/
 [Developers Should Know About JavaScript]: http://odetocode.com/Articles/473.aspx
+[js localeCompare]: http://www.tutorialspoint.com/javascript/string_localecompare.htm
