@@ -98,6 +98,56 @@ h1 > strong {}
 h1 + p {}
 ```
 
+## CSS 定位方式`position`
+
+CSS定位方式分为四种`relative`，`absolute`，`fixed`，`static`。
+
+每种方式考虑四点：
+
+1. 定位的基准对象。
+
+2. 找到基准对象后，从基准对象的什么位置计算元素的位置。
+
+3. 对文档流或者其他元素的影响。 
+
+4. z-index属性是否有用
+
+### relative 定位
+
+relative相对定位比较简单，
+
+1. 偏移的基准是元素原来的位置，
+
+2. 实际显示位置是基于元素**margin的左上侧**根据`top left width/right height/bottom`计算的新位置。
+
+3. 元素实际上还占有原来的位置也不会对其他元素的位置造成影响，
+
+4. 通过z-index设置所在的层.
+
+### absolute 定位
+
+绝对定位，
+
+1. 定位的基准对象是元素的第一个设置了`position`属性且属性值是`relative`或`absolute`的父级对象，如果不存在这样的对象，那么基准对象是body。
+
+2. 从基准对象的**padding左上角**根据`top left width/right height/bottom`计算的新位置。
+
+3. 如果元素设置了绝对定位，元素将脱离文档流不占有parent中的位置(**那么在JS中是否可以使用parent或者child？**)，此时
+
+4. 通过z-index设置所在的层.
+
+### fixed 定位
+
+以body为基准对象，相对于浏览器窗口进行定位。
+
+通过z-index设置所在的层.
+
+### static
+
+默认值，按照正常的文档流进行布局。
+
+**这几种定位方式如何应用？**
+
 
 [CSS Selector]: http://www.w3school.com.cn/css/css_syntax_descendant_selector.asp
 [css design pattern]: http://www.hicss.net/separation-of-powers-model-in-css-design-patterns/
