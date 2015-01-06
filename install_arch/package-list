@@ -1,3 +1,5 @@
+## Archlinux package
+
 apvlv
 banshee
 calibre
@@ -19,7 +21,12 @@ mplayer
 mypaint
 nitrogen
 openssh
+sshfs
 p7zip
+zip
+unzip
+rar
+unrar
 screensaver
 scrot
 shadowsocks
@@ -48,9 +55,32 @@ cbatticon
 mendeleydesktop
 ctags
 nettools
-<<<<<<< HEAD:install_arch/package-list
 ttf-google-fonts-git
-=======
 vim-supertab
 vim-auto-pairs
->>>>>>> 942bd7a54f1e35b8cc96f864d3ae6125bbb6abdc:install_arch/back_list
+fictx-im
+fcitx-cloudpinyin
+fcitx-configtool
+fcitx-sunpinyin
+wqy-microhei
+wqy-zenhei
+wqy-fontmapfont
+markdown
+python2-pip
+python-pip
+chromium-pepper-flash
+flashplugin
+osdlyrics
+gst-plugins-ugly
+gst-libav
+zenity 
+wget
+calc
+
+## ruby package
+
+redcarpet // for vim-preview
+
+## python  package
+### python2
+### python
