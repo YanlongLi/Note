@@ -76,6 +76,11 @@ gst-libav
 zenity 
 wget
 calc
+nodejs
+
+## nodejs package
+
+doctoc
 
 ## ruby package
 
@@ -84,3 +89,5 @@ redcarpet // for vim-preview
 ## python  package
 ### python2
 ### python
+
+

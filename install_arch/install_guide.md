@@ -378,6 +378,13 @@ gpasswd -a $USER vboxusers
 
 ### banshee vlc mplayer calibre
 ### mypaint gimp inkscape ydcv
+### pandoc-static
+
+```
+[kps]
+Server = http://kps.bplaced.net/repo/$arch
+```
+
 
 [firefox-chrome]: http://blog.lx1d.cn/post/non-category/google_app
 [adobe font]: https://code.google.com/p/gthemes-china/downloads/list

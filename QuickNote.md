@@ -169,7 +169,14 @@ ffmpeg -i inputaudio.ape outputaudio.flac
 - [Markdown and reStructuredText][]
 - [Draw Presentable Trees][pymag-trees]: algorithms to draw trees
 
+## Other
 
+[unofficial user repo for archlinux][]
+
+
+
+
+[unofficial user repo for archlinux]: https://wiki.archlinux.org/index.php/Unofficial_user_repositories#kps
 
 [rsync config example]: http://www.jveweb.net/en/archives/2011/01/running-rsync-as-a-daemon.html
 [WikiBooks-Boxes]: http://en.wikibooks.org/wiki/LaTeX/Boxes

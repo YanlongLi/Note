@@ -116,7 +116,21 @@ $ git branch -d release-1.2
 
 ## Usage
 
+### Git force pull to overwrite local files
+
+```
+git fetch --all
+git reset --hard origin/master
+git pull origin master 
+```
+
+### [git revert and git revert][git undoing changes]
+
+
+![difference between revert and reset](_git_img/git-revert-reset.png)
+
 ### Reset current HEAD to the specified state
+
 
 ```bash
 git reset HEAD@{1}
@@ -149,3 +163,4 @@ then commit the change and push change to remote repo.
 [GitHub Mark]: https://github.com/github/markup
 [HEAD orgin master]: http://stackoverflow.com/questions/8196544/what-are-the-git-concepts-of-head-master-origin
 [git HEAD]: http://git-scm.com/book/en/v2/Git-Internals-Git-References#The-HEAD
+[git undoing changes]: https://www.atlassian.com/git/tutorials/undoing-changes/git-revert

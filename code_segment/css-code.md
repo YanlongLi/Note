@@ -132,7 +132,9 @@ relative相对定位比较简单，
 
 2. 从基准对象的**padding左上角**根据`top left width/right height/bottom`计算的新位置。
 
-3. 如果元素设置了绝对定位，元素将脱离文档流不占有parent中的位置(**那么在JS中是否可以使用parent或者child？**)，此时
+**注**：设置absolute值的对象，必须指定`top left right bottom`属性中的一个，否则元素会进行默认方式的布局，即relative方式，占用文档空间。
+
+3. 如果元素设置了绝对定位，元素将脱离文档流不占有parent中的文档空间(**那么在JS中是否可以使用parent或者child？**)，此时
 
 4. 通过z-index设置所在的层.
 

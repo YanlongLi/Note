@@ -400,4 +400,24 @@ jQuery通过`.css(key,value)`也可以方便的实现，jQuery还提供了`show(
 
 #### `toggle()`
 
+#### `slideDown()` `slideUp()` `slideToggle()`
+
+- `slideDown(speed, [callback])`
+- `slideDown(speed, [callback])`
+
+### 淡入淡出
+
+#### `fadeIn()` `fadeOut()` `fadeToggle()`
+
+### 自定义动画
+
+以上的动画改变的是元素的局部属性，通过`animate()`方法可以实现其他动画。
+
+`animate()`原型
+
+```javascript
+animate(params, [duration], [easing], [callback])
+```
+
+- `params`: 用于制作动画效果的属性样式和值的集合
 
