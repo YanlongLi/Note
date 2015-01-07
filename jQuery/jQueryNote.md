@@ -420,4 +420,6 @@ animate(params, [duration], [easing], [callback])
 ```
 
 - `params`: 用于制作动画效果的属性样式和值的集合
-
+- `duration`: 有slow normal fast以及数字可选
+- `easing`: 为动画插件使用，用于控制动画的表现效果，常有linear和swing字符值
+- `callback`: 动画完成后执行的回调函数
