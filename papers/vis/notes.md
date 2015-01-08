@@ -5,10 +5,12 @@
 - Affiliation: Human-Computer Interaction Laboratory University of Maryland
 
 ### Abstract
+
 Tree Broswer, Dynamic Rescaling of Branches, Integreted Search and Filter Function.  
 This paper reflects on the evolution of the design and highlights the principles that emerged from it.
 
 ### Related Work
+
 Space-Filling, Node-Link, Focus+Context(Overview+Detail), 3D Approach, Circular Layout,  
 Focus Switch(refine the focus of interest)
 
@@ -20,6 +22,7 @@ Focus Switch(refine the focus of interest)
 	University of Technology, Sydney
 
 ### Contributes
+
 `EncCon` for visualizing and navigating large hierarchical information.
 
 ### Techniques
@@ -34,7 +37,9 @@ Focus Switch(refine the focus of interest)
 	- zooming-layering concept rather than traditional enlarge + embedded concept
 
 ### Differences
+
 ### Benefits
+
 ### Content
 
 __Design of Interactive Visualization:__
@@ -113,6 +118,7 @@ north–east–south–west order around four sides of the parent rectangle.
 - Affiliation: 
 
 ### Abstract
+
 Structual comparison of large trees.  
 System designed to support the comparison task for large trees of several hundred thousand nodes.  
 Concept of "Guaranteed Visibility"  
@@ -196,9 +202,11 @@ explore trends, countertrends, periodicity, temporal shifts, or anomalies during
 - detail-on-demand
 
 ### Applications
+
 water level data for German rivers
 
 ### Questions
+
 __Any drawbacks of this vis technique?__
 
 It shows the characteristics of some nodes, while we couldn't get the
@@ -216,6 +224,7 @@ encode time information on edges
 - Year: VGTC2008
 
 ### Basic Idea
+
 It uses radial tree layout to draw the hierarchy, and circle sectors to represent the temporal change of edges in the digraphs.  
 several interaction techniques that allow the users to explore the structural and temporal data.  
 Smooth animations help them to track the transitions between views.  
@@ -258,3 +267,26 @@ __TimeRadarTree, what's the relation with time?__
 交互方式主要集中于zoom in/out以及highlight，brushing，tool tips上。
 平滑的动画(smooth animatiion)有助于用户跟踪可视结果的变化。
 **Application Domains**: 层次数据中叶子节点之间的关系，所以app domain比较局限在这一类特殊的tree上，
+
+
+## Multiple foci visualisation of large hierarchies with FlexTree
+
+- Author: Hongzhi Song, Edwin P. Curran, Roy Sterritt
+- Affiliation: School of Computing and Mathematics, Faculty of Engineering, University of Ulster at Jordanstown, Northern Ireland, UK
+- Year: InfoVis 2004
+
+Visiualizing large hierarchies is a difficult topic.
+One is how to handle the increasing scale of hierarchies.
+One is how to enable the user to focus on multiple selections of interest while maintaining context.
+
+node-link base techniques and space-filling(enclosure or containment) techniques both have their advantages and disadvantages.
+it it not always approprite to say that the space-filling approach is better than the connection-based approach.
+which technique to choose is mainly determined by the task domain.
+this paper tries to bridge the gap.
+
+treemaps are better than node-link base techniques in terms of scalibility and the ability to depict node content information.
+this paper enhanced these two point in node-link base technique by introducing the space-filling concept into node-link diagram.
+also, it has a special design for the representation of node, so their content can be visualized.**HOW?**
+
+from the feedback, it is found that flextree is suitable for __decision tree__ 
+
