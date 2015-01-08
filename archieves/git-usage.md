@@ -124,10 +124,54 @@ git reset --hard origin/master
 git pull origin master 
 ```
 
-### [git revert and git revert][git undoing changes]
+### [revert to a previous git commit][]
 
+#### Temporarily switch to a different commit
 
-![difference between revert and reset](_git_img/git-revert-reset.png)
+```
+git checkout <commit_sha>
+```
+
+if you want make a new branch from a commit previous, by
+
+```
+git checkout -b new-branch <commit_sha>
+```
+
+#### **Hard delete unpublished commits**
+
+**use reset** to delete the commit from history
+
+```
+git reset --hard <commit_sha>
+```
+
+above will destroy all the local modifications.
+
+```
+git stash
+git reset --hard <commit_sha>
+git stash pop
+```
+
+command above first stash the local change, then do a hard reset,
+after all done, restore the local change.
+
+#### **Undo published commits with new commits**
+
+```
+git revert HEAD~2..HEAD
+git commit -m 'message '
+```
+
+command above revert the last two commits by add two revert commits,
+the commit history is maintained.
+
+maybe you want to revert a merge commit, by(not tried)
+
+```
+git revert -m 1 <merge_commit_sha>
+```
 
 ### Reset current HEAD to the specified state
 
@@ -163,4 +207,4 @@ then commit the change and push change to remote repo.
 [GitHub Mark]: https://github.com/github/markup
 [HEAD orgin master]: http://stackoverflow.com/questions/8196544/what-are-the-git-concepts-of-head-master-origin
 [git HEAD]: http://git-scm.com/book/en/v2/Git-Internals-Git-References#The-HEAD
-[git undoing changes]: https://www.atlassian.com/git/tutorials/undoing-changes/git-revert
+[revert to a previous git commit]: http://stackoverflow.com/questions/4114095/revert-to-a-previous-git-commit
