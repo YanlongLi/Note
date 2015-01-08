@@ -72,6 +72,8 @@ float、clear、table-layout、vertical-align
 
 ## [CSS选择器][CSS Selector]
 
+[CSS ruanyf][]
+
 ### 1. 组选择器
 
 ```css
@@ -153,3 +155,4 @@ relative相对定位比较简单，
 
 [CSS Selector]: http://www.w3school.com.cn/css/css_syntax_descendant_selector.asp
 [css design pattern]: http://www.hicss.net/separation-of-powers-model-in-css-design-patterns/
+[CSS ruanyf]: http://www.ruanyifeng.com/blog/2009/03/css_selectors.html
