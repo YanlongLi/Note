@@ -423,3 +423,156 @@ animate(params, [duration], [easing], [callback])
 - `duration`: 有slow normal fast以及数字可选
 - `easing`: 为动画插件使用，用于控制动画的表现效果，常有linear和swing字符值
 - `callback`: 动画完成后执行的回调函数
+
+```
+$("div").click(function(){
+	$(this).animate({
+		width: "20%",
+		height: "70px"
+	},
+	3000,function(){
+		$(this).css({"border":"solid 3px #666"});
+	})
+});
+```
+
+注：paramms在表示动画属性时，需要使用`骆驼`写法，即如果是“font-size”必须写成“fontSize”，否则会报错。
+
+### 队列动画
+
+`$().animate().animate().animate()`定义的动画依次执行。
+
+### 动画的停止和延时
+
+#### `stop([clearQueue],[totoEnd])`
+
+停止所选元素正在执行的动画，
+
+- clearQueue: bool值，表示是否停止正在执行的动画
+- totoEnd：bool值，表示是否立即完成正在执行的动画
+
+### `delay[duration, [queueName]]`
+
+设置一个延时值推迟后续队列中的动画执行，
+
+- duration： 延时的时间值
+- queueName：表示队列名词，即动画队列
+
+### 小节
+
+这一节介绍jquery中提供的动画函数，有
+
+- show(), hide(), toggle(): 改变元素的height width
+- fadeIn(), fadeOut()： 改变元素的opacity，长度和高度不变
+- slideUp(), slideDown(), slideToggle()：改变元素的高度
+- animate()：用于自定义动画
+
+## Ajax 
+
+Ajax是`Asynchronous JavaScript and XML`的所写，核心是通过[XMLHttpRequest][]对象以异步方式向服务器发送请求，
+并通过该对象返回数据。这种方式不局限于Web动态页面，警惕啊页面中也可以使用。
+
+### 加载异步数据
+
+#### 原生JS加载异步数据
+
+```javascript
+var request = new XMLHttpRequest();
+request.open(mehtod, url, isAsync);
+request.onreadystatechange = function(){
+	if(request.readyState == 4){// 请求完成加载
+		if(request.status == 200){// 响应成功
+			//...
+		}
+	}
+};
+request.send();
+```
+
+#### jQuery 中的[load()][jquery load]方法
+
+`load(url,[data],[callback])` 
+
+> Load data from the server and place the returned HTML into the matched element.
+
+- data: 是发送到服务器的数据，格式为key/value
+- 参数url可以用来过滤请求页面的元素
+- request method: The POST method is used if data is provided as an object; otherwise, GET is assumed.
+
+#### 全局函数getJson()
+
+`$.getJSOn(url, [data], [callback])`
+
+#### 全局函数getScript()
+
+注入脚本自动执行
+
+`$.getScript(url, [callback])`
+
+#### 异步加载XML文档
+
+`$.get(url, [data], [callback], [type])`
+
+其中type代表返回数据的格式，如html, xml, js, json, text等
+
+
+**以上方法可以用来爬取和过滤网页**
+**以上方法用于请求服务器的静态数据**
+
+### 请求服务器数据
+
+客户端发送带有参数的请求，服务器分析参数后传回数据。
+
+#### `$.get(url, [data], [callback], [type])`
+
+参数datawier{key:value,key2:value2}的格式，如果参数值是中文个数，
+需要使用`encodeURI()`转码，接受的数据使用`decodeURI()`解码。
+
+#### `$.post(url, [data], [callback], [type])`
+
+#### `serialize()`序列化表单
+
+用于简化参数传值的方式。
+将选择的DOM元素转换成能随AJAX传递的字符串。
+
+如
+
+```javascript
+$.post(someurl, 
+	$("#formUserInfo").serialize(),
+	function(){..}
+);
+```
+
+```html
+<div>
+	<form id="formUserInfo">
+	</form>
+</div>
+```
+
+### `$.ajax([options])`方法
+
+![ajax options](_img/jquery-ajax.png)
+
+#### `$.ajaxSetup([options])`设置全局Ajax
+
+通过这个函数设置全局性的Ajax默认选项
+
+### Ajax全局事件
+
+![ajax global event](_img/jquery-ajax-global-event.png)
+
+- `ajaxStart() ajaxStop()`: 可以绑定在任意一个元素上，比如一个tip元素，
+		在其他ajax请求开始时提示获取数据，请求完成时提示获取数据完成。
+
+###	案例	
+
+![ajax case](_img/jquery-ajax-case.png)
+
+
+
+[XMLHttpRequest]: https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest
+[jquery load]: http://api.jquery.com/load/
+
+
