@@ -1,3 +1,11 @@
+## linux default application
+
+### set default application
+
+```
+xdg-mime default llpp.desktop application/pdf
+```
+
 ## usage of rsync
 
 ### start rsync daemon
@@ -26,6 +34,7 @@ rsync -av hostname::module_name /dest/path # copy files
 [config example][rsync config example]
 
 ## Latex
+
 ### 带边框的文本
 
 - 包：framed
@@ -72,16 +81,20 @@ rsync -av hostname::module_name /dest/path # copy files
 ### ctags
 
 #### generate tags file of current directory
+
 ```bash
 ctags -R .
 ctags -R -f . ./directory/to/store/tags
 ```
 
 ### taglist
+
 ```vimscript
 :TlistToggle
 ```
+
 ### Alt Macros in console version of vim
+
 ```bash
 set convert-meta on
 ```
@@ -115,6 +128,7 @@ then, `set <m-i>=^[i`
 
 
 ### [Resize splits window more quickly][vim resize window]
+
 ```vimscript
 :resize/res 60
 :resize +5
@@ -144,7 +158,9 @@ done
 ```
 
 ## Other
+
 ### do not bell on tab-completion in linux
+
 add `set bell-style none` to `/etc/inputrc`
 
 ### [MyPaint基础小教程][]
@@ -157,6 +173,7 @@ camera setting
 ### [farbox协作规则][farbox editor]
 
 ### Split cue file to flac
+
 [cue spliting][] `shnsplit`
 
 ### Convert single ape file to ape
@@ -166,6 +183,7 @@ ffmpeg -i inputaudio.ape outputaudio.flac
 ```
 
 ## To-Read
+
 - [Markdown and reStructuredText][]
 - [Draw Presentable Trees][pymag-trees]: algorithms to draw trees
 
