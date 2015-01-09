@@ -1,6 +1,25 @@
 
 # CSS
 
+## percentage value of width and height
+
+a block-level element will by default expand to fit the width of its containing element(**parent's width-padding**).
+
+a percentage value of width and height only works when its containing element has a explicit width or height setting.
+
+it it not wise to set margin if an element's height or width value is set to 100%.
+
+
+## CSS 设置可见性
+
+元素的可见性可以通过两种方式实现
+
+- `visibility: hidden` `visibility:visible`
+- `display: none` `display:inline` `display:block`
+
+两种方式有明显的区别，`visibility:hidden`只是让元素不可见，元素仍占有原来的位置。
+`display:none`让元素脱离文档流，不占有文档空间。
+
 ## CSS继承
 
 1. 所有元素可继承：visibility和cursor
