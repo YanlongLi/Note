@@ -1,6 +1,61 @@
 
 # JavaScript
 
+## methods to get an element's offset and size
+
+with raw javascript
+
+```javascript
+element.style.height; // only works when `height` attr is set
+
+element.clientHeight; // including padding
+element.offsetHeight; // including padding + border
+element.scrollHeight; // **???**
+
+window.getComputedStyle(element[, pseudoElt]);
+
+svgElement.getBBox(); // rendered offset and size
+element.getBoundingClientRect(); // rendered offset and size
+```
+
+with jquery
+
+```javascript
+// if you need height of div including padding + border + margin , can use
+$('#someDiv').outerHeight(true);
+
+// if you need height of div including padding + border 
+$('#someDiv').outerHeight();
+
+// if you need height of div including padding
+$('#someDiv').innerHeight();
+
+//if you need height of div excluding margin/padding/border
+$('#someDiv').height();
+
+```
+
+
+## difference between `node.parentNode` and `node.parentElement`
+
+[see][parentNode parentElement]
+
+> parentElement is new to Firefox 9 and to DOM4, but it has been present in all other major browsers for ages.
+In most cases, it is the same as parentNode.  
+The only difference comes when a node's parentNode is not an element. If so, parentElement is null.
+
+As an example:
+
+```javascript
+document.body.parentNode; // the <html> element
+document.body.parentElement; // the <html> element
+
+document.documentElement.parentNode; // the document node
+document.documentElement.parentElement; // null
+```
+
+Since the <html> element (document.documentElement) doesn't have a parent that is an element, parentElement is null.  
+(There are other, more unlikely, cases where parentElement could be null, but you'll probably never come across them.)
 
 ## NPM
 
@@ -427,3 +482,4 @@ function d3_layout_hierarchyLinks(nodes) {
 [js closure]: http://javascriptissexy.com/understand-javascript-closures-with-ease/
 [Developers Should Know About JavaScript]: http://odetocode.com/Articles/473.aspx
 [js localeCompare]: http://www.tutorialspoint.com/javascript/string_localecompare.htm
+[parentNode parentElement]: http://stackoverflow.com/questions/8685739/difference-between-dom-parentnode-and-parentelement
