@@ -107,6 +107,144 @@ xmlhttp.onreadystatechange=function(){
 xmlhttp.send();
 ```
 
+## how to understand a js function with `this` keyword
+
+for example
+
+```
+var Controller = {};
+Controller.control = function(type){
+	switch(type){
+		case 1:
+			this.moveForward();
+			break;
+		case 2:
+			this.moveBack();
+			break;
+		case 3:
+			this.moveLeft();
+			break;
+		case 4:
+			this.moveRight();
+	}
+}
+
+function Person(){}
+
+Person.prototype.moveForward = function(){
+	console.log("I am a person, I moved forward");
+};
+Person.prototype.moveBack= function(){
+	console.log("I am a person, I moved back");
+};
+Person.prototype.moveLeft= function(){
+	console.log("I am a person, I moved left");
+};
+Person.prototype.moveRight = function(){
+	console.log("I am a person, I moved right");
+};
+
+var person = new Person();
+
+person.control = Controller.control.bind(person);
+// or Person.prototype.control = Controller.control;
+
+person.control(1); // I am a person, I moved forward
+person.control(2); // I am a person, I moved back
+person.control(3); // I am a person, I moved left
+person.control(4); // I am a person, I moved right
+```
+
+what does this mean? in this way, the function defined a general control action,
+this action is suitable for every object that has for functions `moveForward moveBack moveLeft, moveRight`
+
+may be we can define another class called `Car` and apply the control function to Car instance;
+
+we can add function to object at runtime.
+
+this feature can be used when there are some objects that has a or some common actions.
+
+## three different variables
+
+```
+function Obj()}{
+	this.data = 1;
+}
+
+Obj.prototype.data = 100;
+
+Obj.data = 1000;
+```
+
+when use `new` to create a object, we can use `this.data`,
+it refers to the first variable or the second variable(only if the first variable haven't been set).
+the first two variables belong to each instance separately.
+
+the third variable is a class object, only be accessed by `Obj.data`.
+
+
+when it comes to using closure to implemet `oo`,......
+
+## implement inherit using prototype
+
+see code below
+
+```
+function Person(name, email, website){
+    this.name = name;
+    this.email = email;
+    this.website = website;
+};
+ 
+Person.prototype.sayHello = function(){
+    var hello = "Hello, I am "+ this.name  + ", <br>" +
+                "my email is: " + this.email + ", <br>" +
+                "my website is: " + this.website;
+    return hello;
+};
+ 
+function Student(name, email, website, no, dept){
+    var proto = Object.getPrototypeOf;
+    proto(Student.prototype).constructor.call(this, name, email, website);
+    this.no = no;
+    this.dept = dept;
+}
+ 
+// 继承prototype
+Student.prototype = Object.create(Person.prototype);
+ 
+//重置构造函数
+Student.prototype.constructor = Student;
+ 
+//重载sayHello()
+Student.prototype.sayHello = function(){
+    var proto = Object.getPrototypeOf;
+    var hello = proto(Student.prototype).sayHello.call(this) + '<br>';
+    hello += "my student no is: " + this. no + ", <br>" +
+             "my departent is: " + this. dept;
+    return hello;
+};
+ 
+var me = new Student(
+    "Chen Hao",
+    "haoel@hotmail.com",
+    "http://coolshell.cn",
+    "12345678",
+    "Computer Science"
+);
+document.write(me.sayHello());
+```
+
+in simple terms, we first execute supser class's init function in subclass, 
+of course, we need to use `bind` function to bind `this` to the subclass.
+
+then, set the subclass's prototype to super class's, `Object.create(SuperClass,prototype)`
+
+down to this step, the initial function of subclass will be the super class's, so
+we need to reset the initial function back  `SubClass.prototype.constructor = SubClass`
+
+at last, use prototype to override function in super class.
+
 ## implement oo using closure
 
 ```JavaScript
@@ -194,6 +332,7 @@ s1.print();
 s2.print();
 ```
 
+## implement interface or subclass
 
 ## JavaScript Object
 
