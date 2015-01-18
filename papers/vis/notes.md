@@ -6,7 +6,7 @@
 
 ### Abstract
 
-Tree Broswer, Dynamic Rescaling of Branches, Integreted Search and Filter Function.  
+Tree Browser, Dynamic Rescaling of Branches, Integrated Search and Filter Function.  
 This paper reflects on the evolution of the design and highlights the principles that emerged from it.
 
 ### Related Work
@@ -33,7 +33,7 @@ Focus Switch(refine the focus of interest)
 		presentation of the hierarchical structure of graphs.
 -	rectangular division algorithm
 - an experimental evaluation of EncCon’s layout algorithm
-- a new focusþcontext viewing technique for the navigation of large hierarchies
+- a new focus+context viewing technique for the navigation of large hierarchies
 	- zooming-layering concept rather than traditional enlarge + embedded concept
 
 ### Differences
@@ -290,3 +290,54 @@ also, it has a special design for the representation of node, so their content c
 
 from the feedback, it is found that flextree is suitable for __decision tree__ 
 
+## Elastic Hierarchies: Combining Treemaps and  Node-Link Diagrams
+
+- Authro: Shengdong Zhao, Michael J. McGuffin, Mark H. Chignell
+- Affiliation: University of Toronto 
+- Year: InfoVis 2005
+
+### Contributions
+
+`elastic hierarchies`
+
+`elastic` 意为易伸缩的
+这篇文章将treemap和node-link图结合的方式展示层次数据，
+在不同的层次采用不同的展示方式，因此可以用在多种信息可视化中。
+同时，elastic hierarchies可以结合不同的可视化策略，诸如focus+contex，multi-view等。
+elastic hierarchies上有很大的设计空间。
+
+**What is elastic hierarchies?**
+
+`hybrid mixture`: space-efficiency of treemap,
+structural clarity of node-link diagram
+
+Taxonomy to characterize the design space of such hybrid combination.
+
+Our work investigates improving tree representations using dynamically adjustable hybrids,
+i.e. elastic hierarchies, and focuses on the case of combining Treemaps and node-link diagrams in a single display.
+
+in term of comparison, treemap allow visual comparison of the relative sizes of nodes, and node-link diagram is better at show the levels and depth.
+
+在交互上，treemap的内部节点空间被其子节点完全占据，这就给用户选择这些节点造成了困难。通过添加边界和边距的方式只能在很小程度上改善状况。
+论文中给出的prototype在这方面也给出了方法。
+
+## InterRing: A Visual Interface for Navigating and Manipulating Hierarchies
+
+- Author: Yang, Jing Ward, Matthew O Rundensteiner, Elke A Patro, Anilkumar
+- Affiliation: Computer Science Department Worcester Polytechnic Institute
+- Year: InfoVis2003
+
+`RSF`: Ratial, Space-Filling technique
+
+RSF方式跟传统的node-link相比有不少优点，RSF方式继承于Treemap，所以能够有效的利用
+可视空间，同时RSF克服了treemap不能有效传达层次信息的缺点。现有的很多给予RSF的系统和工具都在交互操作上有不同程度的支持。
+这篇文章阐述了在层次数据上的一个比较能够让人满意的操作集合。
+
+文章展示了InterRing这样一个可视化层次数据的系统，支持大量的交互操作，
+特别的，它能够支持
+
+- multi-focus distortions
+- interactive hierarchy reconfiguration
+- both semi-automated and manual selection
+
+把系统引用在一些数据上，通过和其他方式的比较说明了系统的高效性和实用性。
