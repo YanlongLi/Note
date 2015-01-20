@@ -341,3 +341,6 @@ RSF方式跟传统的node-link相比有不少优点，RSF方式继承于Treemap�
 - both semi-automated and manual selection
 
 把系统引用在一些数据上，通过和其他方式的比较说明了系统的高效性和实用性。
+
+
+InterRing
