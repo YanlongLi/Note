@@ -1,6 +1,35 @@
 
 
 ## Bash Commands
+
+### problem of sapce in filename
+
+originally, we use
+
+```bash
+for n in `find . -name *.cue`
+do
+	# bala bala bala
+done
+```
+
+if space in filename, `file name`, then it will be
+
+```
+file
+name
+```
+
+to fix it
+
+```bash
+find . -name *.cue -print0 | while IFS= read -r -d '' n;
+do
+	iconv -f gb18030 -t utf8 "${n}" -o "${n}.new" && mv "${n}.new" "${n}"
+done
+```
+
+### Others
 - read lines of a file
 
 	```bash
