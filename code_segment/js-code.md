@@ -97,13 +97,16 @@ $.ajax({
 });
 
 var xmlhttp=new XMLHttpRequest();
-xmlhttp.open("GET",encodeURI("http://vis.pku.edu.cn/weiboutil/text/split?text=[\"你好\",\"你不好\"]"),true);
 xmlhttp.onreadystatechange=function(){
 	if (xmlhttp.readyState==4 && xmlhttp.status==200){
 		var o = xmlhttp.responseText;
 		console.log(JSON.parse(o));
 	}
 };
+var timeout = setTimeout( function () {  
+    xmlhttp.abort(); // call error callback  
+}, 60*1000 /* timeout after a minute */ ); 
+xmlhttp.open("GET",encodeURI("http://vis.pku.edu.cn/weiboutil/text/split?text=[\"你好\",\"你不好\"]"),true);
 xmlhttp.send();
 ```
 
@@ -612,6 +615,120 @@ function d3_layout_hierarchyLinks(nodes) {
 }));
 ```
 
+## [skills about js][]
+
+### using `& |` in condition
+
+```javascript
+var foo = 10;  
+foo == 10 && doSomething(); // is the same thing as if (foo == 10) doSomething(); 
+foo == 5 || doSomething(); // is the same thing as if (foo != 5) doSomething();
+
+//逻辑或还可用来设置默认值，比如函数参数的默认值。
+function doSomething(arg1){ 
+    arg1 = arg1 || 10; // arg1 will have 10 as a default value if it’s not already set
+}
+```
+
+### max/min value of array
+
+```
+var  numbers = [5, 458 , 120 , -215 , 228 , 400 , 122205, -85411]; 
+var maxInNumbers = Math.max.apply(Math, numbers); 
+var minInNumbers = Math.min.apply(Math, numbers);
+```
+
+### fix decimal part
+
+```javascript
+var num =2.443242342;
+num = num.toFixed(4);  // num will be equal to 2.4432
+// and function Number.toPrecision()
+```
+
+### for-in loop (not in array)
+
+```javascript
+//下面这样的用法，可以防止迭代的时候进入到对象的原型属性中。
+for (var name in object) {  
+    if (object.hasOwnProperty(name)) { 
+        // do something with name
+    }  
+}
+
+var sum = 0;  
+for (var i = 0, len = arrayNumbers.length; i < len; i++) {  
+    sum += arrayNumbers[i];  
+}
+```
+### `,` operator
+
+```javascript
+var a = 0; 
+var b = ( a++, 99 ); 
+console.log(a);  // a will be equal to 1 
+console.log(b);  // b is equal to 99
+```
+
+### isFinite() function
+
+```javascript
+isFinite(0/0) ; // false
+isFinite("foo"); // false
+isFinite("10"); // true
+isFinite(10);   // true
+isFinite(undefined);  // false
+isFinite();   // false
+isFinite(null);  // true，这点当特别注意
+```
+
+### `JSON.stringfy(obj)` and `JSON.parse(str)`
+
+### special `switch/case`
+
+```javascript
+function getCategory(age) {  
+    var category = "";  
+    switch (true) {  
+        case isNaN(age):  
+            category = "not an age";  
+            break;  
+        case (age >= 50):  
+            category = "Old";  
+            break;  
+        case (age <= 20):  
+            category = "Baby";  
+            break;  
+        default:  
+            category = "Young";  
+            break;  
+    };  
+    return category;  
+}  
+getCategory(5);  // 将返回 "Baby"
+```
+
+## timeout of `websocket`
+
+```javascript
+//通常情况下，WebSocket连接创建后，如果30秒内没有任何活动，服务器端会对连接进行超时处理，防火墙也可以对单位周期没有活动的连接进行超时处理。
+
+//为了防止这种情况的发生，可以每隔一定时间，往服务器发送一条空的消息。可以通过下面这两个函数来实现这个需求，一个用于使连接保持活动状态，另一个专门用于结束这个状态。
+
+var timerID = 0; 
+function keepAlive() { 
+    var timeout = 15000;  
+    if (webSocket.readyState == webSocket.OPEN) {  
+        webSocket.send('');  
+    }  
+    timerId = setTimeout(keepAlive, timeout);  
+}  
+function cancelKeepAlive() {  
+    if (timerId) {  
+        cancelTimeout(timerId);  
+    }  
+}
+```
 
 [jquery ajax]: http://api.jquery.com/jQuery.ajax/
 [js closure]: http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html
@@ -622,3 +739,4 @@ function d3_layout_hierarchyLinks(nodes) {
 [Developers Should Know About JavaScript]: http://odetocode.com/Articles/473.aspx
 [js localeCompare]: http://www.tutorialspoint.com/javascript/string_localecompare.htm
 [parentNode parentElement]: http://stackoverflow.com/questions/8685739/difference-between-dom-parentnode-and-parentelement
+[skills about js]: http://segmentfault.com/blog/kidsama/1190000002474610

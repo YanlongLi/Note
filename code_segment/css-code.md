@@ -1,6 +1,69 @@
 
 # CSS
 
+## [CSS Filters][]
+
+```
+.filter{
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+}
+```
+
+### Greyscale
+
+Greyscale property will convert the colour in your images to a shade of grey.
+
+percent or 0-1
+
+### Blur
+
+The blur effect will take your image and blur all of it, the amount of blurred is decided by the value of the property..
+
+mesured by pixex
+
+### Saturate
+
+The saturate effect adds colour saturating to the colours in your images.
+
+The value used in saturate can be either decimal or percentage, the normal saturation value on your images will be 100%. To add more saturation to your image apply a percentage higher than 100%.
+
+### Sepia
+
+This will add a sepia tint to your images, which makes your image look like **older photographs**.
+
+percent or 0-1
+
+### Hue Rotate
+
+The Hue rotate property will change the colour around to be completely different depending of the degree value you provide it.
+
+The best way to think of this is like a colour spectrum wheel, the colour that it's starting at will will take the degree value of the hue rotate and use the new colour instead.
+
+### Invert
+
+The invert effect will apply the same look as negatives on images back in the days when we used films in cameras.
+
+The value of 100% will set this to full inverted effect.
+
+### Brightness
+
+The brightness property will just change the brightness applied to the image, the normal image will start at 0%. To increase the brightness of the image you need to go higher than 0% so change it to 50% to see the brightness change.
+
+### Contrast
+
+The contrast value will change the difference between the lightest and darkest part of the image.
+
+The value of this can be either decimal or percentage the normal image will have a contrast of 1. To make it darker use a value less than 1, to make it brighter you change the value more than 1.
+
+### Opacity
+
+The normal opacity setting will be set to 1, if you want to me this transparent then you can set this value to less than 1.
+
+
 ## percentage value of width and height
 
 a block-level element will by default expand to fit the width of its containing element(**parent's width-padding**).
@@ -172,6 +235,7 @@ relative相对定位比较简单，
 **这几种定位方式如何应用？**
 
 
+[CSS Filters]: http://www.paulund.co.uk/css3-image-filters
 [CSS Selector]: http://www.w3school.com.cn/css/css_syntax_descendant_selector.asp
 [css design pattern]: http://www.hicss.net/separation-of-powers-model-in-css-design-patterns/
 [CSS ruanyf]: http://www.ruanyifeng.com/blog/2009/03/css_selectors.html

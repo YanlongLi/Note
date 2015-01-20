@@ -88,6 +88,16 @@ redcarpet // for vim-preview
 
 ## python  package
 ### python2
+ipython2
+ipython2-pdb
+python2-nose
+python2-pyqt4
+python2-sip
+python2-pygments
+python2-pyzmq
+python2-tornado
+python2-jinja
+haskell-pandoc
 ### python
 
 

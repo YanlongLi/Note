@@ -170,6 +170,8 @@ camera setting
 
 ### [Mathjax 符号对照表][mathjax symbols]
 
+![mathjax symble](_img/mathjax_.png)
+
 ### [farbox协作规则][farbox editor]
 
 ### Split cue file to flac
