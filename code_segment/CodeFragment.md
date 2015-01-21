@@ -2,6 +2,14 @@
 
 ## Bash Commands
 
+### Map 'Caps_Lock' to 'Escape'
+
+`xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'`
+
+### Create a file with specific size
+
+`dd if=/dev/zero of=testfile.txt bs=1M count=10 `
+
 ### problem of sapce in filename
 
 originally, we use
