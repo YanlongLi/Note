@@ -44,6 +44,29 @@ $ git log --stat # 查看提交信息及更新的文件
 
 $ git archive --format tar --output /path/to/file.tar master # 将 master 以 tar 格式打包到指定文件
 ```
+### Git diff
+
+```bash
+git diff
+git diff --staged # check difference between staged and last commit
+git diff --cached #  same as --staged
+git diff --check # 检查行尾多余的空白
+```
+
+```bash
+git diff remotename/branchname:remote/path/file1.txt local/path/file1.txt
+# This will show the differences going from the remote file to the local file. Or to view the differences in the other direction:
+git diff HEAD:local/path/file1.txt remotename/branchname:remote/path/file1.txt
+#Basically you can diff any two files anywhere using this notation:
+git diff ref1:path/to/file1 ref2:path/to/file2
+# where ref1 and ref2 could be branch names, remotename/branchname, or even commit SHAs.
+
+# what change was introduced to origin/master in the last 4 commits?
+git diff origin/master origin/master~3
+
+If you want to diff your current working directory against the 5th most recent commit on origin/master, you would omit the first argument:
+git diff origin/master~4
+```
 
 ### Usage Rules
 
