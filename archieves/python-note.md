@@ -90,6 +90,13 @@ immutable 数据类型。
 
 ### Dictonary
 
+初始化
+
+```
+dict1 = dict(name="lan", age=12, address="some")
+dict2 = dict([("name","lan"),("age",12),("address","some")])
+```
+
 在Dictionary上进行的操作
 
 ```python
@@ -104,6 +111,18 @@ print dict[2]           # Prints value for 2 key
 print tinydict          # Prints complete dictionary 
 print tinydict.keys()   # Prints all the keys 
 print tinydict.values() # Prints all the values 
+```
+
+### Set集合
+
+```
+set1 = set([1,2,3,4,5])
+set2 = set([3,4,5,6,7])
+
+set1 - set2
+set1 | set2
+set1 & set2
+set1 ^ set2
 ```
 
 ### 类型转换
@@ -166,6 +185,78 @@ print tinydict.values() # Prints all the values
 
 ## Functions
 
+## Other
+
+### 函数默认值共享
+
+```
+def f(a,L=[]):
+	L.append(a)
+	return L
+
+print f(1) # [1]
+print f(2) # [1,2]
+print f(3) # [1,2,3]
+
+### Solution
+def f(a,L=None):
+	if L is None
+		L = []
+	L.append(a)
+	return L
+
+```
+
+### 函数参数可以通过位置或名称绑定
+### Lambda表达式
+
+```
+def make_increment(step):
+	return lambda x: x+step
+
+add_one = make_increment(1)
+
+print add_one(12)
+print add_one(100)
+
+```
+### filter map reduce
+
+- `filter(function, sequence)`
+- `map(function, sequence)`
+- `reduce(function, sequence)`
+
+### 列表式推倒
+
+[表达式 for 变量 in 列表]    或者  [表达式 for 变量 in 列表 if 条件]
+
+可以做filter，可以做map
+
+- `lst = [x ** 2 for x in Range(1,10)]`
+- `lst = map(lambda x: x ** 2, Range(1,10))`
+
+```
+[(x,y) for x in (1,2,3) for y in (2,3,4)] ## 笛卡尔积
+[(x,y) for x in (1,2,3) for y in (2,3,4) if x!=y] ##[(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 2), (3, 4)]
+```
+
+### 集合推导式
+
+`set1 = {x for x in 'abcde' if x not in 'abc'}`
+转置矩阵
+
+```
+matrix = [
+    [1,2,3,4,5],
+    [6,7,8,9,10],
+    [11,12,13,14,15]
+]
+transpose = [[row[i] for row in matrix] for i in range(5)]
+print transpose # [[1, 6, 11], [2, 7, 12], [3, 8, 13], [4, 9, 14], [5, 10, 15]]
+
+list(zip(*matrix)) ## 用zip实现
+
+```
 [python string]: http://www.tutorialspoint.com/python/python_strings.htm
 [python build-in string methods]: http://www.tutorialspoint.com/python/python_strings.htm
 [python built-in list methods]: http://www.tutorialspoint.com/python/python_lists.htm
