@@ -255,8 +255,15 @@ transpose = [[row[i] for row in matrix] for i in range(5)]
 print transpose # [[1, 6, 11], [2, 7, 12], [3, 8, 13], [4, 9, 14], [5, 10, 15]]
 
 list(zip(*matrix)) ## 用zip实现
-
 ```
+
+## Package
+
+- **numpy**
+- **pandas**
+- ***matplotlib*
+
+
 [python string]: http://www.tutorialspoint.com/python/python_strings.htm
 [python build-in string methods]: http://www.tutorialspoint.com/python/python_strings.htm
 [python built-in list methods]: http://www.tutorialspoint.com/python/python_lists.htm
