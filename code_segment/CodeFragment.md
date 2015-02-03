@@ -1,4 +1,25 @@
 
+## Mongo
+
+### update value using old value
+
+```
+db.events.find().snapshot().forEach(
+  function (e) {
+    // update document, using its own properties
+    e.coords = { lat: e.lat, lon: e.lon };
+
+    // remove old properties
+    delete e.lat;
+    delete e.lon;
+
+    // save the updated document
+    db.events.save(e);
+  }
+)
+```
+### [Field Update Operator](http://docs.mongodb.org/manual/reference/operator/update-field/)
+
 
 ## Bash Commands
 
