@@ -1,6 +1,93 @@
 
 # JavaScript
 
+### add method to object
+
+```javascript
+function Person(name, age){
+	this.name = name;
+	this.age = age;
+}
+var o = new Person("YanlongLi",12);
+function get_name(){
+	return this.name;
+}
+function get_age(){
+	return this.age;
+}
+
+// generate a new function associate with a object
+var get_o_name = get_name.bind(o);
+var get_o_age = get_age.bind(o);
+
+// bad way
+o.get_name = get_name;
+o.get_age = get_age;
+console.log(o.get_name());
+console.log(o.get_age());
+delete o.get_name;
+delete o.get_age;
+
+// for short
+console.log(get_name.call(o));
+console.log(get_age.call(o));
+
+```
+
+## getter and setter in closure
+
+```javascript
+/*
+ * different implementation of counter
+ */
+
+// object
+function Counter(n){
+	this.n = n;
+}
+Counter.prototype.count = function(){
+	return this.n++;
+};
+Counter.prototype.reset = function(){
+	this.n = 0;
+}
+
+var c = new Counter(10);
+c.count();
+c.count();
+c.reset();
+
+// closure
+function counter(n){
+	return {
+		count: function(n){
+			return n++;
+		},
+		reset: function(){
+			n = 0;
+		}
+	}
+}
+var c = counter(20);
+c.count();
+c.reset();
+
+// Getter and Setter with closure
+function counter(n){
+	return {
+		get count() {return n++},
+		set count(m){ n=m }
+	};
+}
+var c = counter(100);
+console.log(c.count);
+console.log(c.count);
+c.count = 120;
+console.log(c.count);
+console.log(c.count);
+
+```
+
 ## methods to get an element's offset and size
 
 with raw javascript
@@ -237,6 +324,12 @@ var me = new Student(
 );
 document.write(me.sayHello());
 ```
+
+```javascript
+B.prototype = inherit(A.prototype);
+B.prototype.constructor = B;
+```
+
 
 in simple terms, we first execute supser class's init function in subclass, 
 of course, we need to use `bind` function to bind `this` to the subclass.
