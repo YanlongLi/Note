@@ -1,6 +1,15 @@
 
 # JavaScript
 
+### allow remote access to mongodb 
+
+change the config file: /etc/mongodb.conf
+
+```
+# bind_ip = 127.0.0.1
+bind_ip = 0.0.0.0
+```
+
 ### add method to object
 
 ```javascript

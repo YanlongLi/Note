@@ -87,6 +87,14 @@ rsync -av hostname::module_name /dest/path # copy files
 
 ## Vim
 
+### revert lines
+
+[doc](http://vim.wikia.com/wiki/Reverse_all_lines)
+
+`:g/^/m0`
+
+under Unix-like system, `tac` command would be helpfull
+
 ### ctags
 
 #### generate tags file of current directory
