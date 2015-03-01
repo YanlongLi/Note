@@ -75,13 +75,38 @@ it it not wise to set margin if an element's height or width value is set to 100
 
 ## CSS 设置可见性
 
-元素的可见性可以通过两种方式实现
+元素的可见性可以通过三种方式实现
 
 - `visibility: hidden` `visibility:visible`
 - `display: none` `display:inline` `display:block`
+- `opacity:0`
 
 两种方式有明显的区别，`visibility:hidden`只是让元素不可见，元素仍占有原来的位置。
 `display:none`让元素脱离文档流，不占有文档空间。
+
+以下是三种方式的具体区别：
+[link](http://stackoverflow.com/questions/272360/does-opacity0-have-exactly-the-same-effect-as-visibilityhidden?answertab=votes#tab-top)
+
+>
+Here is a compilation of verified information from the various answers.  
+Each of these CSS properties is in fact unique. In addition to rendering an element not visible, they have the following additional effect(s):
+
+- Collapses the space that the element would normally occupy
+- Responds to events (e.g., click, keypress)
+- Participates in the taborder
+
+```
++----------------------+----------+--------+----------+
+|                      | collapse | events | taborder |
++----------------------+----------+--------+----------+
+| opacity: 0           | No       | Yes    | Yes      |
+| visibility: hidden   | No       | No     | No       |
+| visibility: collapse | *        | No     | No       |
+| display: none        | Yes      | No     | No       |
++----------------------+----------+--------+----------+
+* Yes inside a table element, otherwise No.
+```
+
 
 ## CSS继承
 
