@@ -1,6 +1,58 @@
 
 # JavaScript
 
+## [d3.tip](https://github.com/Caged/d3-tip)
+
+[adjust tip target](https://github.com/Caged/d3-tip/blob/master/examples/explicit-target.html)
+
+## jQuery
+
+You can check or uncheck a checkbox element or a radio button using the .prop() method:
+
+[link](https://learn.jquery.com/using-jquery-core/faq/how-do-i-check-uncheck-a-checkbox-input-or-radio-button/)
+
+```
+// Check #x
+$( "#x" ).prop( "checked", true );
+// Uncheck #x
+$( "#x" ).prop( "checked", false );
+```
+
+## js Array.map() and Array.forEach()
+
+[MDN: Array.map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+
+> map calls a provided callback function once for each element in an array, in order, and constructs a new array from the results.
+**callback is invoked only for indexes of the array which have assigned values; it is not invoked for indexes that are undefined,
+those which have been deleted or which have never been assigned values.**
+
+[MDN: Array.forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+
+> forEach() executes the provided callback once for each element present in the array in ascending order.
+__It is not invoked for indexes that have been deleted or elided. However, it is executed for elements that are present and have the value undefined.__
+
+## d3 drag and click event
+
+[link](https://github.com/mbostock/d3/issues/1445)
+
+you need to check defaultPrevented if you don’t want the click to fire on drag move:
+
+```javascript
+selection.on("click", function() {
+  if (d3.event.defaultPrevented) return;
+  otherwiseDoAwesomeThing();
+});
+```
+
+if an element was registered on click and drag(dragstart, drag, dragend) event, then click will fire drag event.
+using method above, `drag move` event will not be fired.
+
+### d3 axis ticks and tick format
+
+[ticks](http://codepen.io/idan/pen/xejuD)
+[custom time format](http://bl.ocks.org/mbostock/4149176)
+[tick format](http://bl.ocks.org/mbostock/9764126)
+
 ### allow remote access to mongodb 
 
 change the config file: /etc/mongodb.conf

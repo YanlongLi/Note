@@ -4,7 +4,8 @@
 
 pandoc to pdf file with Chinese need using xelatex and select the main font-name
 
-[link][https://github.com/jgm/pandoc/wiki/Pandoc-with-Chinese]
+[link](https://github.com/jgm/pandoc/wiki/Pandoc-with-Chinese)
+
 `pandoc from.md -o to.pdf --latex-engine=xelatex -V mainfont=WenQuanYi\ Micro\ Hei\ Mono`
 
 ## linux default application

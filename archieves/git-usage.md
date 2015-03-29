@@ -223,6 +223,25 @@ Working tree files, whether modified or not, will be left alone.
 
 then commit the change and push change to remote repo.
 
+## checkout file in index(staged file)
+
+```bash
+# this restores the file status in the index
+git reset -- <file>
+# then check out a copy from the index
+git checkout -- <file>
+```
+## merge one file from another branch
+
+```
+git checkout -p another-branch /path/to/file
+```
+
+this approach using file in another branch to substitude(not actual merge)
+```
+git checkout another-branch /path/to/file
+```
+
 
 [Git Book]: http://git-scm.com/book/en/v2
 [git branch model]: http://nvie.com/posts/a-successful-git-branching-model/
@@ -231,3 +250,4 @@ then commit the change and push change to remote repo.
 [HEAD orgin master]: http://stackoverflow.com/questions/8196544/what-are-the-git-concepts-of-head-master-origin
 [git HEAD]: http://git-scm.com/book/en/v2/Git-Internals-Git-References#The-HEAD
 [revert to a previous git commit]: http://stackoverflow.com/questions/4114095/revert-to-a-previous-git-commit
+
