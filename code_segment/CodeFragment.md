@@ -11,6 +11,8 @@
 <meta http-equiv="Expires" content="0" />
 ```
 
+### [HTML Meta Tags](http://www.i18nguy.com/markup/metatags.html)
+
 ## Mongo
 
 ### update value using old value
@@ -34,6 +36,14 @@ db.events.find().snapshot().forEach(
 
 
 ## Bash Commands
+
+### merge two files into one
+
+```
+
+convert image1.png image2.png image3.png -append result/result-sprite.png ## vertical append
+convert image1.png image2.png image3.png +append result/result-sprite.png ## horizon append
+```
 
 ### Map 'Caps_Lock' to 'Escape'
 
