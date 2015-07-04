@@ -1,3 +1,12 @@
+## MVP
+
+[from](http://www.gwtproject.org/articles/mvp-architecture.html)
+
+benefits:
+
+* 方便多个开发中同时工作
+* 减少测试用例
+* 在GWT中，编写JRE测试，不需要浏览器参与
 
 ## JavaScript代码结构组织良好的五个特点
 
