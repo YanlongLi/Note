@@ -1,3 +1,24 @@
+## git tips
+
+ref to [git lola](http://blog.kfish.org/2010/04/git-lola.html)
+
+[alias]
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+
+## pdnsd + dnsmasq + shadowsocks
+dnsmasq 根据预定义的规则进行dns解析，并对请求做处理，比如加tag. 
+dnsmasq自己不做dns解析,作为一个代理的功能将解析转给其他服务,比如pdnsd.
+
+根据dnsmasq在请求包上加的tag,比如fuckgfw,添加iptables将对应包转给shadowsocks.
+
+- http://aenes.com/post/740.html
+- http://hong.im/2014/07/08/use-ipset-with-shadowsocks-on-openwrt/
+- http://www.jianshu.com/p/8b130d8ca804
+- http://abublog.com/openwrt_shadowsocks_dnsmasq_fuckwall.html
+- https://www.techllage.com/179-openwrt-zhe-teng-xiao-ji-di-er-pianpdnsd-chinadns-dnsmasq-jie-j/0
+
+
 ### xterm下中文标题乱码解决
 
 参见[帖子](http://forum.ubuntu.org.cn/viewtopic.php?f=8&t=259668)
