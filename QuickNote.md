@@ -1,3 +1,7 @@
+## enable X11Forwarding for ssh
+
+ref to [archwiki](https://wiki.archlinux.org/index.php/Secure_Shell#X11_forwarding)
+fix bug `X11 forwarding request failed on channel 0`, [link](http://www.cyberciti.biz/faq/how-to-fix-x11-forwarding-request-failed-on-channel-0/)
 
 ## pdnsd + dnsmasq + shadowsocks
 dnsmasq 根据预定义的规则进行dns解析，并对请求做处理，比如加tag. 
