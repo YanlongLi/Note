@@ -1,10 +1,3 @@
-## git tips
-
-ref to [git lola](http://blog.kfish.org/2010/04/git-lola.html)
-
-[alias]
-  lol = log --graph --decorate --pretty=oneline --abbrev-commit
-  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
 ## pdnsd + dnsmasq + shadowsocks
 dnsmasq 根据预定义的规则进行dns解析，并对请求做处理，比如加tag. 

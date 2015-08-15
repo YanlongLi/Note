@@ -1,3 +1,31 @@
+## git remote big files from git history
+
+ref to [link](http://stackoverflow.com/questions/2100907/how-to-remove-delete-a-large-file-from-commit-history-in-git-repository)
+
+
+## git tips
+
+ref to [git lola](http://blog.kfish.org/2010/04/git-lola.html)
+
+[alias]
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+## git tips
+
+ref to [git lola](http://blog.kfish.org/2010/04/git-lola.html)
+
+[alias]
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    _
+
+## git tips
+
+ref to [git lola](http://blog.kfish.org/2010/04/git-lola.html)
+
+[alias]
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
 # Git Usage
 
