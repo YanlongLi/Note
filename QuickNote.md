@@ -1,3 +1,11 @@
+
+## Access to Windows shared files under linux
+
+sudo mount -t smbfs -o username=lansunlong //192.168.0.126/Music/ /mnt/music
+
+umount /mnt/localfolder 
+
+
 ## enable X11Forwarding for ssh
 
 ref to [archwiki](https://wiki.archlinux.org/index.php/Secure_Shell#X11_forwarding)
