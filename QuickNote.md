@@ -1,3 +1,80 @@
+## Tornado, StaticFileHandler
+
+[static file handler](http://stackoverflow.com/questions/21248222/how-can-tornado-serve-a-single-static-file-at-an-arbitrary-location)
+
+## YouCompleteMe
+
+c++ syntastic
+
+(issues)[https://github.com/Valloric/YouCompleteMe/issues/303]
+
+`echo | clang -std=c++11 -stdlib=libc++ -v -E -x c++ -`
+
+(ycm_extra_conf.py)[https://gist.github.com/locojay/4950253]
+
+## complete solution for vim
+
+### code completion
+
+- [neocomplete](https://github.com/Shougo/neocomplete.vim)
+- [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+
+### snippets completion
+
+engine: 
+- [ultisnips](https://github.com/SirVer/ultisnips) or
+- [neosnippet](https://github.com/Shougo/neosnippet.vim)
+
+snipet file:
+- [neosnippet-snippets](https://github.com/Shougo/neosnippet-snippets)
+- [vim-snippets](https://github.com/honza/vim-snippets)
+  - snippets/* for snipMate format
+  - UltiSnips/* for UltiSnips format
+
+
+## solution for YouCompleteMe and UltiSnippets key coflict
+
+[discuss on stackoverflow](http://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme)
+
+solution 1: 
+
+change `g:UltiSnippetsExpandTrigger` to some key else except for `<tab>`,
+for example, `let g:UltiSnippetsExpandTrigger = '<c-j>'`
+
+solution 2:
+
+still use tab for expand trigger, but change map of tab in YCM.
+YCM uses tab for `g:ycm_key_list_select_completion = []`,
+for exmaple, `let g:UltiSnippetsExpandTrigger = ['<C-n>', '<Down>']`
+
+solution 3:
+[issue](https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-15451411)
+
+
+## App quick access
+
+[Alternative to alfread](http://alternativeto.net/software/alfred/?platform=linu)x
+
+- MAC: alfred
+- Linux:
+  - synapse
+  - mutate
+
+config for synapse:
+[Wiki configure](http://synapse.zeitgeist-project.com/wiki/index.php?title=Plugins/Configuration)
+[stack overflow](http://askubuntu.com/questions/174838/can-i-change-synapse-shortcut-to-super-windows-key-alone)
+```
+.config/synapse/config.json
+{
+  "ui" : {
+    "shortcuts" : {
+      "activate" : "Super_L" // or disable it with "", then config it using Openbox
+    }
+  }
+}
+```
+
+[Zeitgeist](https://wiki.archlinux.org/index.php/Zeitgeist)
 
 ## Access to Windows shared files under linux
 
@@ -154,6 +231,8 @@ pandoc to pdf file with Chinese need using xelatex and select the main font-name
 ### set default application
 
 ```
+xdg-mime query filetype <some file path>
+xdg-mime query default <application/pdf>
 xdg-mime default llpp.desktop application/pdf
 ```
 
