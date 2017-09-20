@@ -5,3 +5,5 @@
 *.out
 *.dvi
 *.swp
+.vs/
+.vscode/
