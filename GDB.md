@@ -5,6 +5,8 @@ if you want debug you program, you need compile your code with gdb support using
 
 [GDB cheetsheet](http://users.ece.utexas.edu/~adnan/gdb-refcard.pdf)
 
+[RMS's gdb Debugger Tutorial](http://www.unknownroad.com/rtfm/gdbtut/)
+
 ```
 g++ -o main -g main.cpp
 ```
